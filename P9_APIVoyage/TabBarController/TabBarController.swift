@@ -20,18 +20,15 @@ class TabBarController: UITabBarController {
         
         // View change rate
         let tabOne = ChangeRateController()
-        let tabOneBarItem = UITabBarItem(title: "Change", image: #imageLiteral(resourceName: "first"), selectedImage: UIImage(named: "selectedImage.png"))
-        tabOne.tabBarItem = tabOneBarItem
+        tabOne.tabBarItem = UITabBarItem(title: "Change", image: #imageLiteral(resourceName: "dollar"), selectedImage: nil)
         
         // View translate view
         let tabTwo = TranslatationController()
-        let tabTwoBarItem2 = UITabBarItem(title: "Translate", image: #imageLiteral(resourceName: "second"), selectedImage: UIImage(named: "selectedImage2.png"))
-        tabTwo.tabBarItem = tabTwoBarItem2
+        tabTwo.tabBarItem = UITabBarItem(title: "Translate", image: #imageLiteral(resourceName: "translate"), selectedImage: nil)
         
         // View meteo
         let tabTree = MeteoController()
-        let tabTwoBarItem3 = UITabBarItem(title: "Meteo", image: #imageLiteral(resourceName: "first"), selectedImage: UIImage(named: "selectedImage2.png"))
-        tabTree.tabBarItem = tabTwoBarItem3
+        tabTree.tabBarItem = UITabBarItem(title: "Meteo", image: #imageLiteral(resourceName: "soleil-1"), selectedImage: nil)
         
         self.viewControllers = [tabOne, tabTwo, tabTree]
     }
