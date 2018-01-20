@@ -9,15 +9,24 @@
 import UIKit
 
 class ChangeRateController: UIViewController {
+    @IBOutlet weak var localChangeText: UITextField!
+    
+    @IBOutlet weak var dollarChangeText: UITextField!
+    
+    @IBOutlet weak var currentRateText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentRateText.text = "1.2255"
+        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
+    @IBAction func convertLocalToDollarChange() {
+        if let localChangeNumber = Int(localChangeText.text!), let currentRateNumber = Int(currentRateText.text!) {
+            let dollarChangeNumber = localChangeNumber * currentRateNumber
+            
+            dollarChangeText.text = String(dollarChangeNumber)
+        }
     }
 }
 
