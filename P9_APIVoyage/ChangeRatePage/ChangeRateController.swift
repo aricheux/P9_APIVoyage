@@ -22,10 +22,10 @@ class ChangeRateController: UIViewController {
     }
  
     @IBAction func convertLocalToDollarChange() {
-        if let localChangeNumber = Int(localChangeText.text!), let currentRateNumber = Int(currentRateText.text!) {
-            let dollarChangeNumber = localChangeNumber * currentRateNumber
-            
-            dollarChangeText.text = String(dollarChangeNumber)
+        if let localChangeNumber = Double(localChangeText.text!), let currentRateNumber = Double(currentRateText.text!) {
+                let dollarChangeNumber = localChangeNumber * currentRateNumber
+                
+                dollarChangeText.text = String(dollarChangeNumber)
         }
     }
 }
