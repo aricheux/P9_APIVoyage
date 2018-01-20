@@ -11,4 +11,5 @@ import Foundation
 class APIManager {
     static let sharedInstance = APIManager()
     
+    
 }

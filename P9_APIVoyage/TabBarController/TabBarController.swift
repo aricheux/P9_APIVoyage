@@ -8,29 +8,17 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // View change rate
-        let tabOne = ChangeRateController()
-        tabOne.tabBarItem = UITabBarItem(title: "Change", image: #imageLiteral(resourceName: "dollar"), selectedImage: nil)
-        
-        // View translate view
-        let tabTwo = TranslatationController()
-        tabTwo.tabBarItem = UITabBarItem(title: "Translate", image: #imageLiteral(resourceName: "translate"), selectedImage: nil)
-        
-        // View meteo
-        let tabTree = MeteoController()
-        tabTree.tabBarItem = UITabBarItem(title: "Meteo", image: #imageLiteral(resourceName: "soleil-1"), selectedImage: nil)
-        
-        self.viewControllers = [tabOne, tabTwo, tabTree]
     }
 }
 

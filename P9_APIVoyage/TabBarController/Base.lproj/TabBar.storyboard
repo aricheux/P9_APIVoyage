@@ -18,10 +18,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="w91-Qc-GBR" kind="relationship" relationship="viewControllers" id="e8B-K6-x9x"/>
+                        <segue destination="6ME-pc-PAH" kind="relationship" relationship="viewControllers" id="eZB-jd-FGw"/>
+                        <segue destination="9hl-4m-S21" kind="relationship" relationship="viewControllers" id="V2i-6A-5Eh"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-33" y="-296"/>
+        </scene>
+        <!--Meteo-->
+        <scene sceneID="rsf-CI-0B7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Meteo" id="9hl-4m-S21" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="nBf-MP-S7a"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1kl-uD-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="-157"/>
+        </scene>
+        <!--ChangeRate-->
+        <scene sceneID="J4B-cB-rNr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChangeRate" id="w91-Qc-GBR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="QdC-fI-7jZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swL-7i-BBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="-413"/>
+        </scene>
+        <!--Translate-->
+        <scene sceneID="ng4-QU-9Y4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Translate" id="6ME-pc-PAH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5iY-oa-ylT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZO-M3-Yhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="-297"/>
         </scene>
     </scenes>
 </document>

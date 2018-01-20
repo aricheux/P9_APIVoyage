@@ -15,13 +15,13 @@
 		71121D26200E900A0083873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D24200E900A0083873F /* LaunchScreen.storyboard */; };
 		71121D31200E900A0083873F /* P9_APIVoyageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D30200E900A0083873F /* P9_APIVoyageTests.swift */; };
 		71121D3C200E900A0083873F /* P9_APIVoyageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D3B200E900A0083873F /* P9_APIVoyageUITests.swift */; };
-		71121D4F200E93040083873F /* ChangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D4E200E93040083873F /* ChangeRate.storyboard */; };
 		71121D51200E932A0083873F /* TranslatationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D50200E932A0083873F /* TranslatationController.swift */; };
-		71121D53200E936E0083873F /* Translation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D52200E936E0083873F /* Translation.storyboard */; };
-		71121D55200E939B0083873F /* Meteo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D54200E939B0083873F /* Meteo.storyboard */; };
 		71121D57200E93E70083873F /* MeteoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D56200E93E70083873F /* MeteoController.swift */; };
 		71121D59200E95F10083873F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71121D58200E95F10083873F /* Default-568h@2x.png */; };
 		711C3F7320133D0E0046CBB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C3F7220133D0E0046CBB0 /* APIManager.swift */; };
+		711C3F78201348790046CBB0 /* Meteo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F77201348790046CBB0 /* Meteo.storyboard */; };
+		711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F79201348870046CBB0 /* Translate.storyboard */; };
+		711C3F7D201348970046CBB0 /* ChangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F7C201348970046CBB0 /* ChangeRate.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +56,13 @@
 		71121D37200E900A0083873F /* P9_APIVoyageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P9_APIVoyageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71121D3B200E900A0083873F /* P9_APIVoyageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P9_APIVoyageUITests.swift; sourceTree = "<group>"; };
 		71121D3D200E900A0083873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71121D4E200E93040083873F /* ChangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeRate.storyboard; sourceTree = "<group>"; };
 		71121D50200E932A0083873F /* TranslatationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatationController.swift; sourceTree = "<group>"; };
-		71121D52200E936E0083873F /* Translation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Translation.storyboard; sourceTree = "<group>"; };
-		71121D54200E939B0083873F /* Meteo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Meteo.storyboard; sourceTree = "<group>"; };
 		71121D56200E93E70083873F /* MeteoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoController.swift; sourceTree = "<group>"; };
 		71121D58200E95F10083873F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		711C3F7220133D0E0046CBB0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		711C3F77201348790046CBB0 /* Meteo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Meteo.storyboard; sourceTree = "<group>"; };
+		711C3F7A201348870046CBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = P9_APIVoyage/TabBarController/Base.lproj/Translate.storyboard; sourceTree = "<group>"; };
+		711C3F7C201348970046CBB0 /* ChangeRate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangeRate.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +155,8 @@
 		71121D4A200E92020083873F /* ChangeRatePage */ = {
 			isa = PBXGroup;
 			children = (
+				711C3F7C201348970046CBB0 /* ChangeRate.storyboard */,
 				71121D1D200E900A0083873F /* ChangeRateController.swift */,
-				71121D4E200E93040083873F /* ChangeRate.storyboard */,
 			);
 			path = ChangeRatePage;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 		71121D4B200E92310083873F /* TranslationPage */ = {
 			isa = PBXGroup;
 			children = (
+				711C3F79201348870046CBB0 /* Translate.storyboard */,
 				71121D50200E932A0083873F /* TranslatationController.swift */,
-				71121D52200E936E0083873F /* Translation.storyboard */,
 			);
 			path = TranslationPage;
 			sourceTree = "<group>";
@@ -173,8 +173,8 @@
 		71121D4C200E92690083873F /* MeteoPage */ = {
 			isa = PBXGroup;
 			children = (
+				711C3F77201348790046CBB0 /* Meteo.storyboard */,
 				71121D56200E93E70083873F /* MeteoController.swift */,
-				71121D54200E939B0083873F /* Meteo.storyboard */,
 			);
 			path = MeteoPage;
 			sourceTree = "<group>";
@@ -296,12 +296,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71121D55200E939B0083873F /* Meteo.storyboard in Resources */,
 				71121D26200E900A0083873F /* LaunchScreen.storyboard in Resources */,
-				71121D4F200E93040083873F /* ChangeRate.storyboard in Resources */,
-				71121D53200E936E0083873F /* Translation.storyboard in Resources */,
+				711C3F78201348790046CBB0 /* Meteo.storyboard in Resources */,
 				71121D23200E900A0083873F /* Assets.xcassets in Resources */,
+				711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */,
 				71121D59200E95F10083873F /* Default-568h@2x.png in Resources */,
+				711C3F7D201348970046CBB0 /* ChangeRate.storyboard in Resources */,
 				71121D21200E900A0083873F /* TabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +382,14 @@
 				71121D25200E900A0083873F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		711C3F79201348870046CBB0 /* Translate.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				711C3F7A201348870046CBB0 /* Base */,
+			);
+			name = Translate.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
