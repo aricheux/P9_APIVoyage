@@ -13,17 +13,38 @@ class ChangeRateController: UIViewController {
     
     @IBOutlet weak var dollarChangeText: UITextField!
     
-    @IBOutlet weak var currentRateText: UITextField!
+    var currentRate: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentRateText.text = "1.2255"
         
+        self.updateRate()
+    }
+    
+    func updateRate()
+    {
+        APIManager.sharedInstance.getData(URLString: "https://api.fixer.io/latest") { (ok, obj) in
+            if ok {
+                if let jsonResult = obj as? [String: Any] {
+                    if let rates = jsonResult["rates"] as? [String: Any] {
+                        if let USDRate = rates["USD"] as? Double {
+                            DispatchQueue.main.sync {
+                                self.currentRate = USDRate
+                                print(self.currentRate)
+                            }
+                        }
+                    }
+                }
+            } else {
+                print("Erreur")
+            }
+            
+        }
     }
  
-    @IBAction func convertLocalToDollarChange() {
-        if let localChangeNumber = Double(localChangeText.text!), let currentRateNumber = Double(currentRateText.text!) {
-                let dollarChangeNumber = localChangeNumber * currentRateNumber
+    @IBAction func convertLocalMoneyToDollar() {
+        if let localChangeNumber = Double(localChangeText.text!) {
+                let dollarChangeNumber = localChangeNumber * self.currentRate
                 
                 dollarChangeText.text = String(dollarChangeNumber)
         }
