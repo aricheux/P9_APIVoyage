@@ -32,7 +32,6 @@ class ChangeRateController: UIViewController {
     {
         APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult) in
             self.currentRate = jsonResult["rates"]["USD"].double!
-            print(self.currentRate)
         }
     }
     
