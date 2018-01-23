@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +18,40 @@
                     <view key="view" contentMode="scaleToFill" id="FIQ-xN-QHL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.69029412280000002" green="1" blue="0.7531948986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR9-tp-uMn">
+                                <rect key="frame" x="19" y="266.5" width="337.5" height="133"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sld-mG-kNY">
+                                <rect key="frame" x="19" y="83" width="337.5" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iR9-tp-uMn" firstAttribute="centerX" secondItem="FIQ-xN-QHL" secondAttribute="centerX" id="1u1-rJ-MoK"/>
+                            <constraint firstItem="iR9-tp-uMn" firstAttribute="top" secondItem="sld-mG-kNY" secondAttribute="bottom" constant="50" id="2o2-LQ-OqH"/>
+                            <constraint firstItem="iR9-tp-uMn" firstAttribute="centerY" secondItem="FIQ-xN-QHL" secondAttribute="centerY" id="59u-u4-ORy"/>
+                            <constraint firstItem="sld-mG-kNY" firstAttribute="height" secondItem="FIQ-xN-QHL" secondAttribute="height" multiplier="0.2" id="8OL-7X-K0d"/>
+                            <constraint firstItem="sld-mG-kNY" firstAttribute="centerX" secondItem="FIQ-xN-QHL" secondAttribute="centerX" id="CFW-BP-H1G"/>
+                            <constraint firstItem="sld-mG-kNY" firstAttribute="width" secondItem="FIQ-xN-QHL" secondAttribute="width" multiplier="0.9" id="QDG-0d-Ky0"/>
+                            <constraint firstItem="iR9-tp-uMn" firstAttribute="height" secondItem="FIQ-xN-QHL" secondAttribute="height" multiplier="0.2" id="iaq-Rl-3P5"/>
+                            <constraint firstItem="iR9-tp-uMn" firstAttribute="width" secondItem="FIQ-xN-QHL" secondAttribute="width" multiplier="0.9" id="xlT-Ap-qUA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b0L-FA-eJZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="52x-47-d6Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70d-PM-k1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="-296"/>
+            <point key="canvasLocation" x="1616.8" y="-296.40179910044981"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R4n-VM-TQN">

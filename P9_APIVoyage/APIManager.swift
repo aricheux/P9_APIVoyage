@@ -7,26 +7,30 @@
 //
 
 import Foundation
+import Alamofire
 
 class APIManager {
     static let sharedInstance = APIManager()
     
-    func getData(URLString: String, completion: @escaping (Bool, AnyObject?) -> ()) {
-        
-        let url = URL(string: URLString)
-        let request = URLRequest(url: url!)
-        
-        let session = URLSession(configuration: URLSessionConfiguration.default)
-        let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
-            if let data = data {
-                let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode == 200{
-                    completion(true, json as AnyObject?)
-                } else {
-                    completion(false, json as AnyObject?)
-                }
+    func test (){
+        Alamofire.request("http://google.com")
+    }
+    
+    
+    
+    func getData(from URLString: String, completion: @escaping (AnyObject?) -> ()) {
+        Alamofire.request("https://httpbin.org/get").responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
             }
-        })
-        task.resume()
+            
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+            }
+        }
     }
 }

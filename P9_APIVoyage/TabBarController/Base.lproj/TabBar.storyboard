@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-33" y="-296"/>
         </scene>
-        <!--Meteo-->
+        <!--Weather-->
         <scene sceneID="rsf-CI-0B7">
             <objects>
-                <viewControllerPlaceholder storyboardName="Meteo" id="9hl-4m-S21" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Weather" id="9hl-4m-S21" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="nBf-MP-S7a"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kl-uD-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,7 +42,7 @@
         <scene sceneID="J4B-cB-rNr">
             <objects>
                 <viewControllerPlaceholder storyboardName="ChangeRate" id="w91-Qc-GBR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="QdC-fI-7jZ"/>
+                    <tabBarItem key="tabBarItem" selectedImage="Default.png" systemItem="mostViewed" id="QdC-fI-7jZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swL-7i-BBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,4 +59,7 @@
             <point key="canvasLocation" x="670" y="-297"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Default.png" width="320" height="568"/>
+    </resources>
 </document>
