@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ChangeRateController: UIViewController {
     @IBOutlet weak var localChangeText: UITextField!
@@ -18,22 +19,20 @@ class ChangeRateController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateRate()
+        let dayInSeconde = 24.0 * 60.0
+        
+        Timer.scheduledTimer(timeInterval: dayInSeconde, target: self, selector: #selector(self.updateRate), userInfo: nil, repeats: true)
+
+        if currentRate == 0.0 {
+            self.updateRate()
+        }
     }
     
-    func updateRate()
+    @objc func updateRate()
     {
-        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (obj) in
-            if let jsonResult = obj as? [String: Any] {
-                if let rates = jsonResult["rates"] as? [String: Any] {
-                    if let USDRate = rates["USD"] as? Double {
-                        DispatchQueue.main.sync {
-                            self.currentRate = USDRate
-                            print(self.currentRate)
-                        }
-                    }
-                }
-            }
+        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult) in
+            self.currentRate = jsonResult["rates"]["USD"].double!
+            print(self.currentRate)
         }
     }
     

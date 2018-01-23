@@ -1,0 +1,6 @@
+framework module Pods_P9_APIVoyage {
+  umbrella header "Pods-P9_APIVoyage-umbrella.h"
+
+  export *
+  module * { export * }
+}

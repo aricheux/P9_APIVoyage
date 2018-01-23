@@ -1,0 +1,6 @@
+framework module Pods_P9_APIVoyageTests {
+  umbrella header "Pods-P9_APIVoyageTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
