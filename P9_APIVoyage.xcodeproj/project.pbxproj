@@ -10,7 +10,7 @@
 		38D5D240D25DFE8BBFD24692 /* Pods_P9_APIVoyage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5729FBC4499BE073C350A561 /* Pods_P9_APIVoyage.framework */; };
 		71121D1A200E900A0083873F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D19200E900A0083873F /* AppDelegate.swift */; };
 		71121D1C200E900A0083873F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D1B200E900A0083873F /* TabBarController.swift */; };
-		71121D1E200E900A0083873F /* ChangeRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D1D200E900A0083873F /* ChangeRateController.swift */; };
+		71121D1E200E900A0083873F /* MoneyRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D1D200E900A0083873F /* MoneyRateController.swift */; };
 		71121D21200E900A0083873F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D1F200E900A0083873F /* TabBar.storyboard */; };
 		71121D23200E900A0083873F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71121D22200E900A0083873F /* Assets.xcassets */; };
 		71121D26200E900A0083873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D24200E900A0083873F /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		711C3F7320133D0E0046CBB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C3F7220133D0E0046CBB0 /* APIManager.swift */; };
 		711C3F78201348790046CBB0 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F77201348790046CBB0 /* Weather.storyboard */; };
 		711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F79201348870046CBB0 /* Translate.storyboard */; };
-		711C3F7D201348970046CBB0 /* ChangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F7C201348970046CBB0 /* ChangeRate.storyboard */; };
+		711C3F7D201348970046CBB0 /* MoneyRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F7C201348970046CBB0 /* MoneyRate.storyboard */; };
 		C2810691767F4ECB56EE6844 /* Pods_P9_APIVoyageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A8665839809F2D715CD75 /* Pods_P9_APIVoyageTests.framework */; };
 		EE0EF8ABF6F7070A29DEE54B /* Pods_P9_APIVoyageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF0512596A30D5E3FE22C92 /* Pods_P9_APIVoyageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		71121D16200E900A0083873F /* P9_APIVoyage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P9_APIVoyage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71121D19200E900A0083873F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71121D1B200E900A0083873F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		71121D1D200E900A0083873F /* ChangeRateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateController.swift; sourceTree = "<group>"; };
+		71121D1D200E900A0083873F /* MoneyRateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRateController.swift; sourceTree = "<group>"; };
 		71121D20200E900A0083873F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
 		71121D22200E900A0083873F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71121D25200E900A0083873F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		711C3F7220133D0E0046CBB0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		711C3F77201348790046CBB0 /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		711C3F7A201348870046CBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = P9_APIVoyage/TabBarController/Base.lproj/Translate.storyboard; sourceTree = "<group>"; };
-		711C3F7C201348970046CBB0 /* ChangeRate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChangeRate.storyboard; sourceTree = "<group>"; };
+		711C3F7C201348970046CBB0 /* MoneyRate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoneyRate.storyboard; sourceTree = "<group>"; };
 		841B159D97A874F94F4186F7 /* Pods-P9_APIVoyageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P9_APIVoyageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-P9_APIVoyageUITests/Pods-P9_APIVoyageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FEA2E8CFCD2918817BB5924E /* Pods-P9_APIVoyage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P9_APIVoyage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-P9_APIVoyage/Pods-P9_APIVoyage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +134,7 @@
 				71121D19200E900A0083873F /* AppDelegate.swift */,
 				711C3F7220133D0E0046CBB0 /* APIManager.swift */,
 				71121D49200E91F80083873F /* TabBarController */,
-				71121D4A200E92020083873F /* ChangeRatePage */,
+				71121D4A200E92020083873F /* MoneyRatePage */,
 				71121D4B200E92310083873F /* TranslationPage */,
 				71121D4C200E92690083873F /* WeatherPage */,
 				71121D4D200E92BD0083873F /* Ressource */,
@@ -169,13 +169,13 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		71121D4A200E92020083873F /* ChangeRatePage */ = {
+		71121D4A200E92020083873F /* MoneyRatePage */ = {
 			isa = PBXGroup;
 			children = (
-				711C3F7C201348970046CBB0 /* ChangeRate.storyboard */,
+				711C3F7C201348970046CBB0 /* MoneyRate.storyboard */,
 				71AFC36B2017C9210069D49A /* Controllers */,
 			);
-			path = ChangeRatePage;
+			path = MoneyRatePage;
 			sourceTree = "<group>";
 		};
 		71121D4B200E92310083873F /* TranslationPage */ = {
@@ -217,7 +217,7 @@
 		71AFC36B2017C9210069D49A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				71121D1D200E900A0083873F /* ChangeRateController.swift */,
+				71121D1D200E900A0083873F /* MoneyRateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -382,7 +382,7 @@
 				71121D23200E900A0083873F /* Assets.xcassets in Resources */,
 				711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */,
 				71121D59200E95F10083873F /* Default-568h@2x.png in Resources */,
-				711C3F7D201348970046CBB0 /* ChangeRate.storyboard in Resources */,
+				711C3F7D201348970046CBB0 /* MoneyRate.storyboard in Resources */,
 				71121D21200E900A0083873F /* TabBar.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,7 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				711C3F7320133D0E0046CBB0 /* APIManager.swift in Sources */,
-				71121D1E200E900A0083873F /* ChangeRateController.swift in Sources */,
+				71121D1E200E900A0083873F /* MoneyRateController.swift in Sources */,
 				71121D51200E932A0083873F /* TranslatationController.swift in Sources */,
 				71121D57200E93E70083873F /* WeatherController.swift in Sources */,
 				71121D1A200E900A0083873F /* AppDelegate.swift in Sources */,

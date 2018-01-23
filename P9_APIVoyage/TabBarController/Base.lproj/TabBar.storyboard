@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="669" y="-157"/>
         </scene>
-        <!--ChangeRate-->
+        <!--MoneyRate-->
         <scene sceneID="J4B-cB-rNr">
             <objects>
-                <viewControllerPlaceholder storyboardName="ChangeRate" id="w91-Qc-GBR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MoneyRate" id="w91-Qc-GBR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" selectedImage="Default.png" systemItem="mostViewed" id="QdC-fI-7jZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swL-7i-BBa" userLabel="First Responder" sceneMemberID="firstResponder"/>

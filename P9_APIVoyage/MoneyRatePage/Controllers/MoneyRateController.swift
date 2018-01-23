@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  MoneyRateController.swift
 //  P9_APIVoyage
 //
 //  Created by RICHEUX Antoine on 16/01/2018.
