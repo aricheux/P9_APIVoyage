@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class MeteoController: UIViewController {
+class WeatherController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let queryString = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text in (\"nantes\",\"ny\")) and u=\"c\""
 
-        self.view.backgroundColor = UIColor.green
-        self.title = "Meteo"
+        APIManager.sharedInstance.getWeather(with: queryString) { (jsonDict) in
+            let result = jsonDict["query"]["results"]["channel"]
+            print(result)
+        }
     }
 
     override func didReceiveMemoryWarning() {
