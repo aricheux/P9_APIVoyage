@@ -23,6 +23,7 @@
 		711C3F78201348790046CBB0 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F77201348790046CBB0 /* Weather.storyboard */; };
 		711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F79201348870046CBB0 /* Translate.storyboard */; };
 		711C3F7D201348970046CBB0 /* MoneyRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F7C201348970046CBB0 /* MoneyRate.storyboard */; };
+		719F36CD201CAEF100803B4B /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F36CC201CAEF100803B4B /* WeatherTableViewCell.swift */; };
 		C2810691767F4ECB56EE6844 /* Pods_P9_APIVoyageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A8665839809F2D715CD75 /* Pods_P9_APIVoyageTests.framework */; };
 		EE0EF8ABF6F7070A29DEE54B /* Pods_P9_APIVoyageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF0512596A30D5E3FE22C92 /* Pods_P9_APIVoyageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		711C3F77201348790046CBB0 /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		711C3F7A201348870046CBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = P9_APIVoyage/TabBarController/Base.lproj/Translate.storyboard; sourceTree = "<group>"; };
 		711C3F7C201348970046CBB0 /* MoneyRate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoneyRate.storyboard; sourceTree = "<group>"; };
+		719F36CC201CAEF100803B4B /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		841B159D97A874F94F4186F7 /* Pods-P9_APIVoyageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P9_APIVoyageUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-P9_APIVoyageUITests/Pods-P9_APIVoyageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FEA2E8CFCD2918817BB5924E /* Pods-P9_APIVoyage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P9_APIVoyage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-P9_APIVoyage/Pods-P9_APIVoyage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				71121D56200E93E70083873F /* WeatherController.swift */,
+				719F36CC201CAEF100803B4B /* WeatherTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				711C3F7320133D0E0046CBB0 /* APIManager.swift in Sources */,
 				71121D1E200E900A0083873F /* MoneyRateController.swift in Sources */,
+				719F36CD201CAEF100803B4B /* WeatherTableViewCell.swift in Sources */,
 				71121D51200E932A0083873F /* TranslatationController.swift in Sources */,
 				71121D57200E93E70083873F /* WeatherController.swift in Sources */,
 				71121D1A200E900A0083873F /* AppDelegate.swift in Sources */,

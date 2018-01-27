@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0da-0v-r6n">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0da-0v-r6n" customClass="WeatherTableViewCell" customModule="P9_APIVoyage" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0da-0v-r6n" id="gfc-h9-fRe">
@@ -29,14 +29,26 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YoY-1g-1k7">
                                             <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttf-v1-MyV">
+                                            <rect key="frame" x="166" y="12" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ttf-v1-MyV" firstAttribute="centerY" secondItem="gfc-h9-fRe" secondAttribute="centerY" id="9hU-Eb-Wia"/>
                                         <constraint firstItem="YoY-1g-1k7" firstAttribute="leading" secondItem="gfc-h9-fRe" secondAttribute="leading" id="BHh-gN-SlC"/>
+                                        <constraint firstItem="Ttf-v1-MyV" firstAttribute="centerX" secondItem="gfc-h9-fRe" secondAttribute="centerX" id="FUJ-3F-YUJ"/>
                                         <constraint firstItem="YoY-1g-1k7" firstAttribute="centerY" secondItem="gfc-h9-fRe" secondAttribute="centerY" id="rjj-Pl-CbA"/>
                                         <constraint firstItem="YoY-1g-1k7" firstAttribute="width" secondItem="gfc-h9-fRe" secondAttribute="height" id="xMF-V4-56c"/>
                                         <constraint firstItem="YoY-1g-1k7" firstAttribute="height" secondItem="gfc-h9-fRe" secondAttribute="height" id="zEw-cy-B9x"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImgView" destination="YoY-1g-1k7" id="5PA-mA-AjO"/>
+                                    <outlet property="cellLabel" destination="Ttf-v1-MyV" id="5p8-DD-cTS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
