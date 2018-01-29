@@ -25,7 +25,6 @@ class WeatherController: UITableViewController {
         
         APIManager.sharedInstance.getWeather(with: queryString) { (jsonDict) in
             self.weatherResult = jsonDict["query"]["results"]["channel"]
-            print(self.weatherResult)
             self.tableView.reloadData()
         }
     }
@@ -41,15 +40,11 @@ extension WeatherController {
         guard let weatherData = weatherResult, let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? WeatherTableViewCell  else {
             fatalError("The dequeued cell is not an instance of WeatherTableViewCell.")
         }
+
+        let weather = Weather(json: weatherData[indexPath.row])
         
-        let forecastDay = weatherData[indexPath.row]["item"]["forecast"][0]
-        let temperatureLow = forecastDay["low"].stringValue + "°C "
-        let temperatureHigh = forecastDay["high"].stringValue + "°C "
-        let skyCondition = forecastDay["text"].stringValue
-        let cityName = weatherData[indexPath.row]["location"]["city"].stringValue
-        
-        cell.textLabel?.text = cityName
-        cell.cellLabel.text = "min: " + temperatureLow + "max: " + temperatureHigh
+        cell.textLabel?.text = weather.city
+        cell.cellLabel.text = "min: " + weather.temperatureLow + "max: " + weather.temperatureHigh
         
         return cell
     }

@@ -40,18 +40,15 @@ class YQL {
 class APIManager {
     static let sharedInstance = APIManager()
     
-    func getData(from URLString: String, completion: @escaping (Bool, JSON) -> ()) {
+    func getData(from URLString: String, completion: @escaping (JSON) -> ()) {
         Alamofire.request(URLString).validate().responseJSON { response in
             switch response.result {
             case .success:
                 if let reponse = response.result.value {
-                    completion(true, JSON(reponse))
+                    completion(JSON(reponse))
                 }
             case .failure(let error):
-                if let reponse = response.result.value {
-                    print(error)
-                    completion(false, JSON(response))
-                }
+                print(error)
             }
         }
     }

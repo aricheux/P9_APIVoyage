@@ -17,8 +17,6 @@ class TranslationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initialText.text = "merci"
-        
     }
     
     @IBAction func doTranslation() {

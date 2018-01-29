@@ -35,10 +35,8 @@ class ChangeRateController: UIViewController {
     
     @objc func updateRate()
     {
-        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (result, jsonResult) in
-            if result {
-                self.currentRate = jsonResult["rates"]["USD"].doubleValue
-            }
+        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult) in
+            self.currentRate = jsonResult["rates"]["USD"].doubleValue
         }
     }
     

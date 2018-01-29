@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Translatation Controller-->
+        <!--Translation Controller-->
         <scene sceneID="v6H-GR-0cX">
             <objects>
-                <viewController id="nRG-xP-pY0" customClass="TranslatationController" customModule="P9_APIVoyage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nRG-xP-pY0" customClass="TranslationController" customModule="P9_APIVoyage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FIQ-xN-QHL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOw-Jr-u0b">
                                 <rect key="frame" x="108" y="224" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Translate"/>
                                 <connections>
                                     <action selector="doTranslation" destination="nRG-xP-pY0" eventType="touchUpInside" id="eWB-iu-mRd"/>
                                 </connections>
@@ -55,7 +55,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="52x-47-d6Y"/>
                     <connections>
-                        <outlet property="InitialText" destination="sld-mG-kNY" id="dgI-Ps-KV4"/>
+                        <outlet property="initialText" destination="sld-mG-kNY" id="OgP-6E-ycx"/>
                         <outlet property="translatedText" destination="iR9-tp-uMn" id="6Ic-2D-9Wh"/>
                     </connections>
                 </viewController>
