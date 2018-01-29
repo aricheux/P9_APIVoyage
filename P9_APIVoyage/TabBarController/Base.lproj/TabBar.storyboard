@@ -52,7 +52,7 @@
         <scene sceneID="ng4-QU-9Y4">
             <objects>
                 <viewControllerPlaceholder storyboardName="Translate" id="6ME-pc-PAH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5iY-oa-ylT"/>
+                    <tabBarItem key="tabBarItem" title="Translate" id="5iY-oa-ylT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZO-M3-Yhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

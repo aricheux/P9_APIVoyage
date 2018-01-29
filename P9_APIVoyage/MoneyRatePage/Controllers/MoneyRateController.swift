@@ -10,33 +10,40 @@ import UIKit
 import SwiftyJSON
 
 class ChangeRateController: UIViewController {
-    @IBOutlet weak var localChangeText: UITextField!
-    
-    @IBOutlet weak var dollarChangeText: UITextField!
-    
+    ///
     var currentRate: Double = 0.0
+    ///
+    @IBOutlet weak var localChangeText: UITextField!
+    ///
+    @IBOutlet weak var dollarChangeText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dayInSeconde = 24.0 * 60.0
+        setupTimer()
         
-        Timer.scheduledTimer(timeInterval: dayInSeconde, target: self, selector: #selector(self.updateRate), userInfo: nil, repeats: true)
-
         if currentRate == 0.0 {
             self.updateRate()
         }
     }
     
+    func setupTimer() {
+        let dayInSeconde = 24.0 * 60.0
+        
+        Timer.scheduledTimer(timeInterval: dayInSeconde, target: self, selector: #selector(self.updateRate), userInfo: nil, repeats: true)
+    }
+    
     @objc func updateRate()
     {
-        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult) in
-            self.currentRate = jsonResult["rates"]["USD"].double!
+        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (result, jsonResult) in
+            if result {
+                self.currentRate = jsonResult["rates"]["USD"].doubleValue
+            }
         }
     }
     
     @IBAction func convertLocalMoneyToDollar() {
-        if let localChangeNumber = Double(localChangeText.text!) {
+        if let changeText = localChangeText.text, let localChangeNumber = Double(changeText) {
             let dollarChangeNumber = localChangeNumber * self.currentRate
             
             dollarChangeText.text = String(dollarChangeNumber)

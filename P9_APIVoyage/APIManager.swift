@@ -40,15 +40,18 @@ class YQL {
 class APIManager {
     static let sharedInstance = APIManager()
     
-    func getData(from URLString: String, completion: @escaping (JSON) -> ()) {
+    func getData(from URLString: String, completion: @escaping (Bool, JSON) -> ()) {
         Alamofire.request(URLString).validate().responseJSON { response in
             switch response.result {
             case .success:
                 if let reponse = response.result.value {
-                    completion(JSON(reponse))
+                    completion(true, JSON(reponse))
                 }
             case .failure(let error):
-                print(error)
+                if let reponse = response.result.value {
+                    print(error)
+                    completion(false, JSON(response))
+                }
             }
         }
     }
@@ -60,7 +63,7 @@ class APIManager {
     
     func getWeather(with query: String, completion: @escaping (JSON) -> ()) {
         let url = createYahooUrl(with: query)
-        
+
         Alamofire.request(url!).validate().responseJSON { response in
             switch response.result {
             case .success:
