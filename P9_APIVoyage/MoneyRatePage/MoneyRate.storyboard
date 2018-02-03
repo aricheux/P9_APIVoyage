@@ -88,11 +88,11 @@
             </objects>
             <point key="canvasLocation" x="1616.8" y="-973.76311844077964"/>
         </scene>
-        <!--Change Rate-->
+        <!--Navigation Controller-->
         <scene sceneID="qRG-Wy-tla">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UAc-4U-EfB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Change Rate" selectedImage="dollar" id="Ooz-B0-c4z"/>
+                    <tabBarItem key="tabBarItem" title="" image="dollar" selectedImage="dollar" id="Ooz-B0-c4z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9tC-C3-FNB">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>

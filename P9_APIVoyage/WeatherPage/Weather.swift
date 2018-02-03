@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 
+///
 class Weather {
     ///
     var city: String
