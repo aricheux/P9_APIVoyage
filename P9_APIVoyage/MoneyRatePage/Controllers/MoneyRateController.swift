@@ -9,13 +9,13 @@
 import UIKit
 import SwiftyJSON
 
-class ChangeRateController: UIViewController {
+class MoneyRateController: UIViewController {
     ///
     var currentRate: Double = 0.0
     ///
-    @IBOutlet weak var localChangeText: UITextField!
+    @IBOutlet weak var localChangeText: UITextView!
     ///
-    @IBOutlet weak var dollarChangeText: UITextField!
+    @IBOutlet weak var dollarChangeText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

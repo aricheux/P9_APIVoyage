@@ -6,87 +6,142 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Change Rate Controller-->
+        <!--Money Rate Controller-->
         <scene sceneID="QMV-Ht-I1y">
             <objects>
-                <viewController id="Knb-Cs-Wbe" customClass="ChangeRateController" customModule="P9_APIVoyage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Knb-Cs-Wbe" customClass="MoneyRateController" customModule="P9_APIVoyage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Az0-TU-eAa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-3z-WGR">
-                                <rect key="frame" x="103.66666666666669" y="331.33333333333331" width="207" height="73.333333333333314"/>
-                                <color key="backgroundColor" red="0.063301764430000004" green="0.40020579099999998" blue="0.5955418348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-3z-WGR" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="62.666666666666657" y="207.33333333333334" width="290" height="36.666666666666657"/>
+                                <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="convertLocalMoneyToDollar" destination="Knb-Cs-Wbe" eventType="touchUpInside" id="CoL-Ry-mpc"/>
+                                    <action selector="convertLocalMoneyToDollar" destination="Knb-Cs-Wbe" eventType="touchUpInside" id="k6v-D8-xhz"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mN3-dX-lkr">
-                                <rect key="frame" x="155" y="251.33333333333337" width="104" height="30"/>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="EUR" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-tG-Eyi" customClass="DesignableTextView" customModule="Spring">
+                                <rect key="frame" x="62.666666666666657" y="150.66666666666666" width="87" height="36.666666666666657"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="postal-code"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8D-dS-ENW">
-                                <rect key="frame" x="155" y="454.66666666666669" width="103.66666666666669" height="30"/>
-                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="USD" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-HP-uyt" customClass="DesignableTextView" customModule="Spring">
+                                <rect key="frame" x="265.66666666666669" y="150.66666666666666" width="87" height="36.666666666666657"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xj6-G3-jcd">
-                                <rect key="frame" x="51.333333333333336" y="251" width="103.66666666666666" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cne-T1-5yN">
-                                <rect key="frame" x="51.333333333333336" y="454" width="103.66666666666666" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-Xi-Nm5" customClass="DesignableTextView" customModule="Spring">
+                                <rect key="frame" x="62.666666666666657" y="94" width="290" height="36.666666666666657"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-dX-TZA">
+                                <rect key="frame" x="188.66666666666666" y="150.66666666666666" width="36.666666666666657" height="36.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rgv-dX-TZA" secondAttribute="height" id="HuB-e6-cHQ"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="njw-Je-kV7" customClass="DesignableTextView" customModule="Spring">
+                                <rect key="frame" x="62.666666666666657" y="264" width="290" height="36.666666666666686"/>
+                                <color key="backgroundColor" red="0.69029412280000002" green="1" blue="0.7531948986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xj6-G3-jcd" firstAttribute="height" secondItem="mN3-dX-lkr" secondAttribute="height" id="0Tv-39-LeU"/>
-                            <constraint firstItem="w8D-dS-ENW" firstAttribute="width" secondItem="8LO-3z-WGR" secondAttribute="width" multiplier="0.5" id="5Fd-W3-00j"/>
-                            <constraint firstItem="w8D-dS-ENW" firstAttribute="centerY" secondItem="cne-T1-5yN" secondAttribute="centerY" id="FTG-oq-aev"/>
-                            <constraint firstItem="cne-T1-5yN" firstAttribute="height" secondItem="w8D-dS-ENW" secondAttribute="height" id="GWu-TP-TY8"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.5" id="HC4-UQ-gBe"/>
-                            <constraint firstItem="mN3-dX-lkr" firstAttribute="centerY" secondItem="xj6-G3-jcd" secondAttribute="centerY" id="J5h-aI-DpJ"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="centerY" secondItem="Az0-TU-eAa" secondAttribute="centerY" id="Ja6-Yl-ZAI"/>
-                            <constraint firstItem="mN3-dX-lkr" firstAttribute="leading" secondItem="xj6-G3-jcd" secondAttribute="trailing" id="K8I-de-Usl"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="mN3-dX-lkr" secondAttribute="bottom" constant="50" id="Ya5-gI-sIc"/>
-                            <constraint firstItem="cne-T1-5yN" firstAttribute="width" secondItem="w8D-dS-ENW" secondAttribute="width" id="Zwa-Hq-D7Q"/>
-                            <constraint firstItem="xj6-G3-jcd" firstAttribute="width" secondItem="mN3-dX-lkr" secondAttribute="width" id="aSA-Zg-XvZ"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="mN3-dX-lkr" secondAttribute="centerX" id="nNr-sG-OXx"/>
-                            <constraint firstItem="mN3-dX-lkr" firstAttribute="width" secondItem="8LO-3z-WGR" secondAttribute="width" multiplier="0.5" id="pgp-xn-EFm"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="t8g-TD-9kO"/>
-                            <constraint firstItem="w8D-dS-ENW" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="50" id="wR7-bL-SlU"/>
-                            <constraint firstItem="w8D-dS-ENW" firstAttribute="centerX" secondItem="8LO-3z-WGR" secondAttribute="centerX" id="xXS-me-cfL"/>
-                            <constraint firstItem="w8D-dS-ENW" firstAttribute="leading" secondItem="cne-T1-5yN" secondAttribute="trailing" id="xt8-Ek-nr9"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.1" id="z3n-8x-4Xh"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.05" id="0hZ-wq-oMa"/>
+                            <constraint firstItem="njw-Je-kV7" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="ADg-Ql-fjJ"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="YPR-tG-Eyi" secondAttribute="bottom" constant="20" id="AN2-rm-3mb"/>
+                            <constraint firstItem="i4y-HP-uyt" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="EId-7C-ooI"/>
+                            <constraint firstItem="njw-Je-kV7" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="HCd-54-OpW"/>
+                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="Ik0-Bw-2yb"/>
+                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="NgA-cP-FnW"/>
+                            <constraint firstItem="rgv-dX-TZA" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="20" id="Oxc-Mc-GxY"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="QIu-5u-Q88"/>
+                            <constraint firstItem="njw-Je-kV7" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="Tpe-iv-ohB"/>
+                            <constraint firstItem="i4y-HP-uyt" firstAttribute="trailing" secondItem="eEk-Xi-Nm5" secondAttribute="trailing" id="UhV-gc-Mii"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.7" id="Z0J-PW-hmd"/>
+                            <constraint firstItem="i4y-HP-uyt" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="bES-2S-iTv"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="top" secondItem="Fcf-zs-edo" secondAttribute="top" constant="30" id="cFK-5F-szZ"/>
+                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="20" id="eyo-w6-G1M"/>
+                            <constraint firstItem="njw-Je-kV7" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="20" id="g7e-Zq-A5J"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="meA-ai-mVX"/>
+                            <constraint firstItem="rgv-dX-TZA" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nGi-1V-D8J"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nJ0-RQ-2bj"/>
+                            <constraint firstItem="rgv-dX-TZA" firstAttribute="height" secondItem="i4y-HP-uyt" secondAttribute="height" id="oWK-Ii-HnF"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="u38-eQ-dK9"/>
+                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="leading" secondItem="eEk-Xi-Nm5" secondAttribute="leading" id="xbi-aB-Zjj"/>
+                            <constraint firstItem="i4y-HP-uyt" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="20" id="xum-I7-E4d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fcf-zs-edo"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ol3-EQ-SJL"/>
                     <connections>
-                        <outlet property="dollarChangeText" destination="w8D-dS-ENW" id="mt8-KJ-3ax"/>
-                        <outlet property="localChangeText" destination="mN3-dX-lkr" id="xc3-98-JFd"/>
+                        <outlet property="dollarChangeText" destination="njw-Je-kV7" id="Tgb-pu-NuN"/>
+                        <outlet property="localChangeText" destination="eEk-Xi-Nm5" id="avq-8u-MB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLM-Bw-Z1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616.8" y="-973.76311844077964"/>
+            <point key="canvasLocation" x="1615.9420289855075" y="-974.18478260869574"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qRG-Wy-tla">
@@ -100,7 +155,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Knb-Cs-Wbe" kind="relationship" relationship="rootViewController" id="QeZ-uT-ft1"/>
+                        <segue destination="Knb-Cs-Wbe" kind="relationship" relationship="rootViewController" id="xx0-2J-776"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sno-QS-xpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,6 +164,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dollar" width="32" height="32"/>
+        <image name="convert" width="30" height="30"/>
+        <image name="dollar" width="20" height="30"/>
     </resources>
 </document>

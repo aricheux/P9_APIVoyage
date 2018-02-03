@@ -21,13 +21,9 @@ class TranslationController: UIViewController {
     
     @IBAction func doTranslation() {
         if let initialText = initialText.text {
-            let parameters: Parameters = [
-                "q": "\(initialText)",
-                "target": "en"
-            ]
+            let parameters: Parameters = ["q": "\(initialText)","target": "en"]
             
             APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult) in
-                print(jsonResult)
                 self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
             }
         }
