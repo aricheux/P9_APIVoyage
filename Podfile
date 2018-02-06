@@ -7,6 +7,7 @@ target 'P9_APIVoyage' do
 
   # Pods for P9_APIVoyage
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 

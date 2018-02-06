@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-3z-WGR" customClass="DesignableButton" customModule="Spring">
-                                <rect key="frame" x="62.666666666666657" y="207.33333333333334" width="290" height="36.666666666666657"/>
+                                <rect key="frame" x="21.333333333333343" y="219.33333333333334" width="372.66666666666663" height="43.666666666666657"/>
                                 <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Convert">
@@ -32,7 +32,7 @@
                                         <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -43,35 +43,41 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="EUR" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-tG-Eyi" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="62.666666666666657" y="150.66666666666666" width="87" height="36.666666666666657"/>
+                                <rect key="frame" x="21.333333333333336" y="154.66666666666666" width="111.66666666666666" height="44.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="USD" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-HP-uyt" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="265.66666666666669" y="150.66666666666666" width="87" height="36.666666666666657"/>
+                                <rect key="frame" x="282.33333333333331" y="154.66666666666666" width="111.66666666666669" height="44.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-Xi-Nm5" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="62.666666666666657" y="94" width="290" height="36.666666666666657"/>
+                                <rect key="frame" x="21.333333333333343" y="94" width="372.66666666666663" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
@@ -82,46 +88,52 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-dX-TZA">
-                                <rect key="frame" x="188.66666666666666" y="150.66666666666666" width="36.666666666666657" height="36.666666666666657"/>
+                                <rect key="frame" x="185.33333333333334" y="154.66666666666666" width="44" height="44.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rgv-dX-TZA" secondAttribute="height" id="HuB-e6-cHQ"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="njw-Je-kV7" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="62.666666666666657" y="264" width="290" height="36.666666666666686"/>
+                                <rect key="frame" x="21.333333333333343" y="283" width="372.66666666666663" height="44"/>
                                 <color key="backgroundColor" red="0.69029412280000002" green="1" blue="0.7531948986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.05" id="0hZ-wq-oMa"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.06" id="0hZ-wq-oMa"/>
                             <constraint firstItem="njw-Je-kV7" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="ADg-Ql-fjJ"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="YPR-tG-Eyi" secondAttribute="bottom" constant="20" id="AN2-rm-3mb"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="EId-7C-ooI"/>
                             <constraint firstItem="njw-Je-kV7" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="HCd-54-OpW"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="Ik0-Bw-2yb"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="NgA-cP-FnW"/>
-                            <constraint firstItem="rgv-dX-TZA" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="20" id="Oxc-Mc-GxY"/>
+                            <constraint firstItem="rgv-dX-TZA" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="Oxc-Mc-GxY"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="QIu-5u-Q88"/>
                             <constraint firstItem="njw-Je-kV7" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="Tpe-iv-ohB"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="trailing" secondItem="eEk-Xi-Nm5" secondAttribute="trailing" id="UhV-gc-Mii"/>
-                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.7" id="Z0J-PW-hmd"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.9" id="Z0J-PW-hmd"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="bES-2S-iTv"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="top" secondItem="Fcf-zs-edo" secondAttribute="top" constant="30" id="cFK-5F-szZ"/>
-                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="20" id="eyo-w6-G1M"/>
+                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="eyo-w6-G1M"/>
                             <constraint firstItem="njw-Je-kV7" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="20" id="g7e-Zq-A5J"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="meA-ai-mVX"/>
                             <constraint firstItem="rgv-dX-TZA" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nGi-1V-D8J"/>
@@ -129,7 +141,7 @@
                             <constraint firstItem="rgv-dX-TZA" firstAttribute="height" secondItem="i4y-HP-uyt" secondAttribute="height" id="oWK-Ii-HnF"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="u38-eQ-dK9"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="leading" secondItem="eEk-Xi-Nm5" secondAttribute="leading" id="xbi-aB-Zjj"/>
-                            <constraint firstItem="i4y-HP-uyt" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="20" id="xum-I7-E4d"/>
+                            <constraint firstItem="i4y-HP-uyt" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="xum-I7-E4d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fcf-zs-edo"/>
                     </view>

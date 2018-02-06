@@ -19,16 +19,17 @@ class Weather {
     var temperatureHigh: String
     ///
     var skyCondition: String
-
+    ///
+    var imageSkyCondition: UIImage
+    
     ///
     init (json: JSON) {
-        let currentDay = 0
-        let forecastDay = json["item"]["forecast"][currentDay]
+        let forecastDay = json["item"]["forecast"][0]
         
-        temperatureLow = forecastDay["low"].stringValue + "°C "
-        temperatureHigh = forecastDay["high"].stringValue + "°C "
+        temperatureLow = "Min: " + forecastDay["low"].stringValue + "°C "
+        temperatureHigh = "Max: " + forecastDay["high"].stringValue + "°C "
         skyCondition = forecastDay["text"].stringValue
         city = json["location"]["city"].stringValue
+        imageSkyCondition = #imageLiteral(resourceName: "convert")
     }
-    
 }

@@ -8,34 +8,20 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 import Foundation
 
-class YQL {
-    private let QUERY_PREFIX = "http://query.yahooapis.com/v1/public/yql?q="
-    private let QUERY_SUFFIX = "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback="
-    
-    public func query(_ statement:String, completion: @escaping ([String: Any]) -> Void) {
-        let url = URL(string: "\(QUERY_PREFIX)\(statement.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)\(QUERY_SUFFIX)")
+extension String {
+    func slice(from: String, to: String) -> String? {
         
-        let task = URLSession.shared.dataTask(with: url!) {
-            (data, response, error) in
-            if error != nil {
-                print(error!)
-            } else {
-                do {
-                    let dataDict = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-                    let results:[String: Any] = dataDict!
-                    completion(results)
-                } catch {
-                    print(error)
-                }
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
             }
         }
-        task.resume()
     }
 }
-
 
 class APIManager {
     static let sharedInstance = APIManager()
@@ -59,16 +45,25 @@ class APIManager {
     }
     
     func getWeather(with query: String, completion: @escaping (JSON) -> ()) {
-        let url = createYahooUrl(with: query)
-
-        Alamofire.request(url!).validate().responseJSON { response in
-            switch response.result {
-            case .success:
-                if let reponse = response.result.value {
-                    completion(JSON(reponse))
+        if let url = createYahooUrl(with: query) {
+            Alamofire.request(url).validate().responseJSON { response in
+                switch response.result {
+                case .success:
+                    if let reponse = response.result.value {
+                        completion(JSON(reponse))
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
+            }
+        }
+    }
+    
+    func getImage(from url: String, completion: @escaping (UIImage) -> ()) {
+        Alamofire.request(url).responseImage { response in
+            print(response)
+            if let image = response.result.value {
+                completion(image)
             }
         }
     }
@@ -84,7 +79,7 @@ class APIManager {
     
     func doTranslation(with param: Parameters, completion: @escaping (JSON) -> ()) {
         let gcloud_Key = "AIzaSyAKk9DZiflKL_2kME9R1Wd4ifXvSrwGaDg"
-
+        
         let urlString = "https://translation.googleapis.com/language/translate/v2?key=" + gcloud_Key
         
         Alamofire.request(urlString, method: .post, parameters: param,encoding: JSONEncoding.default, headers: nil).responseJSON {

@@ -1,10 +1,13 @@
 PODS:
   - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - Spring (1.0.5)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - AlamofireImage
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftyJSON
 
@@ -19,9 +22,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Spring: 48aad470f3ead043b2da98b64e0bf0630b7ebc42
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 3b41da3cc5bbf3cb05bd330780890f3dfa409bde
+PODFILE CHECKSUM: 62c3b94e066c412ca9df3a707ef450ddc2cafa04
 
 COCOAPODS: 1.3.1

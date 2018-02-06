@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,40 +13,73 @@
         <scene sceneID="ocm-mF-P99">
             <objects>
                 <tableViewController id="evH-d7-9cK" customClass="WeatherController" customModule="P9_APIVoyage" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zNv-9m-Ype">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zNv-9m-Ype">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="0da-0v-r6n" customClass="WeatherTableViewCell" customModule="P9_APIVoyage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="0da-0v-r6n" customClass="WeatherTableViewCell" customModule="P9_APIVoyage" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0da-0v-r6n" id="gfc-h9-fRe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YoY-1g-1k7">
-                                            <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soleil" translatesAutoresizingMaskIntoConstraints="NO" id="YoY-1g-1k7">
+                                            <rect key="frame" x="16" y="9" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="XNA-OZ-4oR"/>
+                                                <constraint firstAttribute="width" constant="80" id="ugN-gh-Wmh"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttf-v1-MyV">
-                                            <rect key="frame" x="166" y="12" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpN-Li-xWg">
+                                            <rect key="frame" x="96" y="64" width="229" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="iuu-Rd-akf"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttf-v1-MyV">
+                                            <rect key="frame" x="96" y="9" width="229" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="wJN-T6-9mE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUB-Bt-sxY">
+                                            <rect key="frame" x="96" y="39" width="229" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="hBe-C6-hds"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Ttf-v1-MyV" firstAttribute="centerY" secondItem="gfc-h9-fRe" secondAttribute="centerY" id="9hU-Eb-Wia"/>
-                                        <constraint firstItem="YoY-1g-1k7" firstAttribute="leading" secondItem="gfc-h9-fRe" secondAttribute="leading" id="BHh-gN-SlC"/>
-                                        <constraint firstItem="Ttf-v1-MyV" firstAttribute="centerX" secondItem="gfc-h9-fRe" secondAttribute="centerX" id="FUJ-3F-YUJ"/>
-                                        <constraint firstItem="YoY-1g-1k7" firstAttribute="centerY" secondItem="gfc-h9-fRe" secondAttribute="centerY" id="rjj-Pl-CbA"/>
-                                        <constraint firstItem="YoY-1g-1k7" firstAttribute="width" secondItem="gfc-h9-fRe" secondAttribute="height" id="xMF-V4-56c"/>
-                                        <constraint firstItem="YoY-1g-1k7" firstAttribute="height" secondItem="gfc-h9-fRe" secondAttribute="height" id="zEw-cy-B9x"/>
+                                        <constraint firstItem="fUB-Bt-sxY" firstAttribute="top" secondItem="Ttf-v1-MyV" secondAttribute="bottom" id="12B-2x-oSd"/>
+                                        <constraint firstAttribute="trailing" secondItem="bpN-Li-xWg" secondAttribute="trailing" constant="50" id="Bbq-5D-nnV"/>
+                                        <constraint firstAttribute="trailing" secondItem="fUB-Bt-sxY" secondAttribute="trailing" constant="50" id="LJY-VA-kKQ"/>
+                                        <constraint firstItem="Ttf-v1-MyV" firstAttribute="top" secondItem="YoY-1g-1k7" secondAttribute="top" id="daJ-ud-Hdx"/>
+                                        <constraint firstItem="Ttf-v1-MyV" firstAttribute="leading" secondItem="YoY-1g-1k7" secondAttribute="trailing" id="hu4-ne-60Q"/>
+                                        <constraint firstItem="bpN-Li-xWg" firstAttribute="top" secondItem="fUB-Bt-sxY" secondAttribute="bottom" id="jGg-Np-Ijd"/>
+                                        <constraint firstItem="YoY-1g-1k7" firstAttribute="leading" secondItem="gfc-h9-fRe" secondAttribute="leading" constant="16" id="jSr-jk-sG5"/>
+                                        <constraint firstItem="bpN-Li-xWg" firstAttribute="leading" secondItem="YoY-1g-1k7" secondAttribute="trailing" id="mJR-Mv-nCo"/>
+                                        <constraint firstItem="bpN-Li-xWg" firstAttribute="bottom" secondItem="YoY-1g-1k7" secondAttribute="bottom" id="npV-tN-ahE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ttf-v1-MyV" secondAttribute="trailing" constant="50" id="p9T-Ed-Pix"/>
+                                        <constraint firstItem="fUB-Bt-sxY" firstAttribute="leading" secondItem="YoY-1g-1k7" secondAttribute="trailing" id="vXO-gm-gDA"/>
+                                        <constraint firstItem="YoY-1g-1k7" firstAttribute="centerY" secondItem="gfc-h9-fRe" secondAttribute="centerY" id="w5x-uv-80q"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cellImgView" destination="YoY-1g-1k7" id="5PA-mA-AjO"/>
-                                    <outlet property="cellLabel" destination="Ttf-v1-MyV" id="5p8-DD-cTS"/>
+                                    <outlet property="imgWeatherCondition" destination="YoY-1g-1k7" id="7B7-hQ-joX"/>
+                                    <outlet property="weatherCity" destination="Ttf-v1-MyV" id="zCc-5Q-teS"/>
+                                    <outlet property="weatherSkyCondition" destination="bpN-Li-xWg" id="sCK-SH-j00"/>
+                                    <outlet property="weatherTemperature" destination="fUB-Bt-sxY" id="XmF-a8-5oE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
