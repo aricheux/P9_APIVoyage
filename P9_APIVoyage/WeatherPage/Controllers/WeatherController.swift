@@ -11,48 +11,41 @@ import Alamofire
 import SwiftyJSON
 
 class WeatherController: UITableViewController {
-    
+    ///
     var weatherJson: JSON?
+    ///
     var weatherImage = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getData()
+        getDataFromYahoo()
     }
     
-    func getData() {
+    func getDataFromYahoo() {
         let queryString = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text in (\"nantes\",\"ny\")) and u=\"c\""
         
         APIManager.sharedInstance.getWeather(with: queryString) { (jsonDict) in
             self.weatherJson = jsonDict["query"]["results"]["channel"]
             
-            if let url = self.getUrlFromJson(self.weatherJson) {
-                print(url)
-                APIManager.sharedInstance.getImage(from: url) { (image) in
+            if let json = self.weatherJson {
+                APIManager.sharedInstance.getImage(from: self.getImgUrlFromJson(json[0])) { (image) in
                     self.weatherImage.append(image)
-                    self.weatherImage.append(image)
-                    self.tableView.reloadData()
-                    self.tableView.tableFooterView = UIView()
+                    APIManager.sharedInstance.getImage(from: self.getImgUrlFromJson(json[1])) { (image) in
+                        self.weatherImage.append(image)
+                        self.tableView.reloadData()
+                        self.tableView.tableFooterView = UIView()
+                    }
                 }
             }
         }
     }
     
-    func getUrlFromJson(_ json: JSON?) -> String? {
-        var imageDescription = [String]()
-        if let arrayJson = json {
-            for i in 0...arrayJson.count {
-                imageDescription.append(arrayJson[i]["item"]["description"].stringValue)
-                imageDescription[i] = imageDescription[i].slice(from: "<![CDATA[<img src=\"", to: "\"/>")!
-
-                return imageDescription[i]
-            }
-        }
-        
-        return nil
+    func getImgUrlFromJson(_ json: JSON) -> String {
+        var imageDescription = json["item"]["description"].stringValue
+        imageDescription = imageDescription.slice(from: "<![CDATA[<img src=\"", to: "\"/>")!
+        return imageDescription
     }
-    
 }
 
 extension WeatherController {

@@ -23,7 +23,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-3z-WGR" customClass="DesignableButton" customModule="Spring">
                                 <rect key="frame" x="21.333333333333343" y="219.33333333333334" width="372.66666666666663" height="43.666666666666657"/>
                                 <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -101,7 +101,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="njw-Je-kV7" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="21.333333333333343" y="283" width="372.66666666666663" height="44"/>
-                                <color key="backgroundColor" red="0.69029412280000002" green="1" blue="0.7531948986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                 <userDefinedRuntimeAttributes>
@@ -155,11 +155,11 @@
             </objects>
             <point key="canvasLocation" x="1615.9420289855075" y="-974.18478260869574"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Dollar rate-->
         <scene sceneID="qRG-Wy-tla">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UAc-4U-EfB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="dollar" selectedImage="dollar" id="Ooz-B0-c4z"/>
+                    <tabBarItem key="tabBarItem" title="Dollar rate" image="dollarInactif" selectedImage="dollarActif" id="Ooz-B0-c4z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9tC-C3-FNB">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -177,6 +177,7 @@
     </scenes>
     <resources>
         <image name="convert" width="30" height="30"/>
-        <image name="dollar" width="20" height="30"/>
+        <image name="dollarActif" width="25" height="25"/>
+        <image name="dollarInactif" width="25" height="25"/>
     </resources>
 </document>

@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soleil" translatesAutoresizingMaskIntoConstraints="NO" id="YoY-1g-1k7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherInactif" translatesAutoresizingMaskIntoConstraints="NO" id="YoY-1g-1k7">
                                             <rect key="frame" x="16" y="9" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="XNA-OZ-4oR"/>
@@ -55,7 +55,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="hBe-C6-hds"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -94,11 +94,11 @@
             </objects>
             <point key="canvasLocation" x="1717.5999999999999" y="485.30734632683664"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Weather-->
         <scene sceneID="Z9k-ka-liH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gxb-bh-TaE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="soleil" selectedImage="soleil" id="gCJ-uM-PFx"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="weatherInactif" selectedImage="weatherActif" id="gCJ-uM-PFx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L59-m9-BEb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -115,6 +115,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="soleil" width="30" height="30"/>
+        <image name="weatherActif" width="25" height="25"/>
+        <image name="weatherInactif" width="25" height="25"/>
     </resources>
 </document>
