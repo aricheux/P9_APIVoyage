@@ -9,16 +9,22 @@
 import UIKit
 import SwiftyJSON
 
-class MoneyRateController: UIViewController {
+class MoneyRateController: UIViewController, UITextViewDelegate {
     ///
     var currentRate: Double = 0.0
     ///
     @IBOutlet weak var localChangeText: UITextView!
     ///
     @IBOutlet weak var dollarChangeText: UITextView!
+    ///
+    let placeholder = "Saisissez un montant.."
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        localChangeText.delegate = self
+        localChangeText.text = placeholder
+        localChangeText.textColor = .lightGray
         
         setupTimer()
         
@@ -46,6 +52,26 @@ class MoneyRateController: UIViewController {
             
             dollarChangeText.text = String(dollarChangeNumber)
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        if (textView.text == placeholder)
+        {
+            textView.text = ""
+            textView.textColor = .black
+        }
+        textView.becomeFirstResponder() //Optional
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if (textView.text == "")
+        {
+            textView.text = placeholder
+            textView.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
     }
 }
 
