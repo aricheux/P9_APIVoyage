@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class MoneyRateController: UIViewController, UITextViewDelegate {
+class MoneyRateController: UIViewController {
     ///
     var currentRate: Double = 0.0
     ///
@@ -41,8 +41,12 @@ class MoneyRateController: UIViewController, UITextViewDelegate {
     
     @objc func updateRate()
     {
-        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult) in
-            self.currentRate = jsonResult["rates"]["USD"].doubleValue
+        APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult, error) in
+            if error == nil {
+                self.currentRate = jsonResult["rates"]["USD"].doubleValue
+            } else {
+                self.showErrorPopUp()
+            }
         }
     }
     
@@ -54,6 +58,19 @@ class MoneyRateController: UIViewController, UITextViewDelegate {
         }
     }
     
+    ///
+    func showErrorPopUp() {
+        let alertVC = UIAlertController(title: "Erreur", message: "Une erreur lors de la récupération du taux", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Réessayer", style: .default) { (action:UIAlertAction!) in
+            self.updateRate()
+        })
+        self.present(alertVC, animated: true, completion: nil)
+    }
+}
+
+extension MoneyRateController: UITextViewDelegate {
+    ///
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         if (textView.text == placeholder)
@@ -61,9 +78,9 @@ class MoneyRateController: UIViewController, UITextViewDelegate {
             textView.text = ""
             textView.textColor = .black
         }
-        textView.becomeFirstResponder() //Optional
+        textView.becomeFirstResponder()
     }
-    
+    ///
     func textViewDidEndEditing(_ textView: UITextView)
     {
         if (textView.text == "")

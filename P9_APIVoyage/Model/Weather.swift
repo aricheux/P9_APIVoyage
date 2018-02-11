@@ -20,7 +20,7 @@ class Weather {
     ///
     var skyCondition: String
     ///
-    var imageSkyCondition: UIImage
+    var imageSkyCondition = UIImage()
     
     ///
     init (json: JSON) {
@@ -30,6 +30,5 @@ class Weather {
         temperatureHigh = "Max: " + forecastDay["high"].stringValue + "°C "
         skyCondition = forecastDay["text"].stringValue
         city = json["location"]["city"].stringValue
-        imageSkyCondition = #imageLiteral(resourceName: "convert")
     }
 }

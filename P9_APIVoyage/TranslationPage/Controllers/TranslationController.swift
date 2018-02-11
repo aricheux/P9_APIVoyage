@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class TranslationController: UIViewController, UITextViewDelegate {
+class TranslationController: UIViewController {
     
     @IBOutlet weak var initialText: UITextView!
     @IBOutlet weak var translatedText: UITextView!
@@ -28,12 +28,28 @@ class TranslationController: UIViewController, UITextViewDelegate {
         if let initialText = initialText.text {
             let parameters: Parameters = ["q": "\(initialText)","target": "en"]
             
-            APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult) in
-                self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
+            APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult, error) in
+                if error == nil {
+                    self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
+                } else {
+                    self.showErrorPopUp()
+                }
             }
         }
     }
     
+    func showErrorPopUp() {
+        let alertVC = UIAlertController(title: "Erreur", message: "Erreur lors de la traduction", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
+        alertVC.addAction(UIAlertAction(title: "Réessayer", style: .default) { (action:UIAlertAction!) in
+            self.doTranslation()
+        })
+        self.present(alertVC, animated: true, completion: nil)
+    }
+}
+
+extension TranslationController: UITextViewDelegate {
+    ///
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         if (textView.text == placeholder)
@@ -41,9 +57,9 @@ class TranslationController: UIViewController, UITextViewDelegate {
             textView.text = ""
             textView.textColor = .black
         }
-        textView.becomeFirstResponder() //Optional
+        textView.becomeFirstResponder()
     }
-    
+    ///
     func textViewDidEndEditing(_ textView: UITextView)
     {
         if (textView.text == "")
