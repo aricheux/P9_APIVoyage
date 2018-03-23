@@ -22,27 +22,26 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-3z-WGR" customClass="DesignableButton" customModule="Spring">
                                 <rect key="frame" x="21.333333333333343" y="219.33333333333334" width="372.66666666666663" height="43.666666666666657"/>
-                                <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Convert">
-                                    <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="titleColor" red="0.33333333333333331" green="0.59999999999999998" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.33333333333333331" green="0.59999999999999998" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="convertLocalMoneyToDollar" destination="Knb-Cs-Wbe" eventType="touchUpInside" id="k6v-D8-xhz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="EUR" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-tG-Eyi" customClass="DesignableTextView" customModule="Spring">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="EUR" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-tG-Eyi" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="21.333333333333336" y="154.66666666666666" width="111.66666666666666" height="44.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -59,7 +58,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="USD" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-HP-uyt" customClass="DesignableTextView" customModule="Spring">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="USD" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-HP-uyt" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="282.33333333333331" y="154.66666666666666" width="111.66666666666669" height="44.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -76,7 +75,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-Xi-Nm5" customClass="DesignableTextView" customModule="Spring">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-Xi-Nm5" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="21.333333333333343" y="94" width="372.66666666666663" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -99,47 +98,40 @@
                                     <constraint firstAttribute="width" secondItem="rgv-dX-TZA" secondAttribute="height" id="HuB-e6-cHQ"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="njw-Je-kV7" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="21.333333333333343" y="283" width="372.66666666666663" height="44"/>
-                                <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq6-9I-IwQ">
+                                <rect key="frame" x="21" y="271" width="373" height="50"/>
+                                <color key="tintColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Xwc-BD-VJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" red="0.33333333329999998" green="0.59999999999999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.33333333333333331" green="0.59999999999999998" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.06" id="0hZ-wq-oMa"/>
-                            <constraint firstItem="njw-Je-kV7" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="ADg-Ql-fjJ"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="YPR-tG-Eyi" secondAttribute="bottom" constant="20" id="AN2-rm-3mb"/>
+                            <constraint firstItem="Zq6-9I-IwQ" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="8" id="B7A-1u-FVQ"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="EId-7C-ooI"/>
-                            <constraint firstItem="njw-Je-kV7" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="HCd-54-OpW"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="Ik0-Bw-2yb"/>
+                            <constraint firstItem="Zq6-9I-IwQ" firstAttribute="leading" secondItem="Fcf-zs-edo" secondAttribute="leading" constant="21" id="JyF-In-gIW"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="NgA-cP-FnW"/>
                             <constraint firstItem="rgv-dX-TZA" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="Oxc-Mc-GxY"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="QIu-5u-Q88"/>
-                            <constraint firstItem="njw-Je-kV7" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="Tpe-iv-ohB"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="trailing" secondItem="eEk-Xi-Nm5" secondAttribute="trailing" id="UhV-gc-Mii"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.9" id="Z0J-PW-hmd"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="bES-2S-iTv"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="top" secondItem="Fcf-zs-edo" secondAttribute="top" constant="30" id="cFK-5F-szZ"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="eyo-w6-G1M"/>
-                            <constraint firstItem="njw-Je-kV7" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="20" id="g7e-Zq-A5J"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="meA-ai-mVX"/>
                             <constraint firstItem="rgv-dX-TZA" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nGi-1V-D8J"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nJ0-RQ-2bj"/>
                             <constraint firstItem="rgv-dX-TZA" firstAttribute="height" secondItem="i4y-HP-uyt" secondAttribute="height" id="oWK-Ii-HnF"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="u38-eQ-dK9"/>
+                            <constraint firstItem="Fcf-zs-edo" firstAttribute="trailing" secondItem="Zq6-9I-IwQ" secondAttribute="trailing" constant="20" id="v7d-bZ-8EZ"/>
                             <constraint firstItem="YPR-tG-Eyi" firstAttribute="leading" secondItem="eEk-Xi-Nm5" secondAttribute="leading" id="xbi-aB-Zjj"/>
                             <constraint firstItem="i4y-HP-uyt" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="xum-I7-E4d"/>
                         </constraints>
@@ -147,7 +139,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ol3-EQ-SJL"/>
                     <connections>
-                        <outlet property="dollarChangeText" destination="njw-Je-kV7" id="Tgb-pu-NuN"/>
+                        <outlet property="dollarChangeText" destination="Zq6-9I-IwQ" id="Vw7-dM-76x"/>
                         <outlet property="localChangeText" destination="eEk-Xi-Nm5" id="avq-8u-MB9"/>
                     </connections>
                 </viewController>

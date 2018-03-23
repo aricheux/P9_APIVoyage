@@ -10,40 +10,35 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+///
 class WeatherController: UITableViewController {
     ///
     var weatherJson: JSON?
     ///
     var weatherImage = [UIImage]()
-    
+    ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.tableFooterView = UIView()
+        
         getDataFromYahoo()
     }
-    
+    ///
+    override func viewWillAppear(_ animated: Bool) {
+        getDataFromYahoo()
+    }
+    ///
     func getDataFromYahoo() {
         let queryString = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text in (\"nantes\",\"ny\")) and u=\"c\""
         
         APIManager.sharedInstance.getWeather(with: queryString) { (jsonDict, error) in
             if error == nil {
                 self.weatherJson = jsonDict["query"]["results"]["channel"]
-                
-                if let json = self.weatherJson {
-                    APIManager.sharedInstance.getImage(from: self.getImgUrlFromJson(json[0])) { (image, error) in
-                        if error == nil {
-                            self.weatherImage.append(image)
-                            APIManager.sharedInstance.getImage(from: self.getImgUrlFromJson(json[1])) { (image, error) in
-                                if error == nil {
-                                    self.weatherImage.append(image)
-                                    self.tableView.reloadData()
-                                    self.tableView.tableFooterView = UIView()
-                                } else { self.showErrorPopUp() }
-                            }
-                        } else { self.showErrorPopUp() }
-                    }
-                }
-            } else { self.showErrorPopUp() }
+                self.tableView.reloadData()
+            } else {
+                self.errorPopUp()
+            }
         }
     }
     ///
@@ -53,12 +48,13 @@ class WeatherController: UITableViewController {
         return imageDescription
     }
     ///
-    func showErrorPopUp() {
-        let alertVC = UIAlertController(title: "Erreur", message: "Erreur lors de la traduction", preferredStyle: .alert)
+    func errorPopUp() {
+        let alertVC = UIAlertController(title: "", message: "Erreur lors de la récupération de la météo", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
         alertVC.addAction(UIAlertAction(title: "Réessayer", style: .default) { (action:UIAlertAction!) in
             self.getDataFromYahoo()
         })
+        
         self.present(alertVC, animated: true, completion: nil)
     }
 }
@@ -78,7 +74,14 @@ extension WeatherController {
         cell.weatherCity.text = weather.city
         cell.weatherTemperature.text = weather.temperatureLow + " / " + weather.temperatureHigh
         cell.weatherSkyCondition.text = weather.skyCondition
-        cell.imgWeatherCondition.image = weatherImage[indexPath.row]
+        
+        APIManager.sharedInstance.getImage(from: self.getImgUrlFromJson(weatherData[indexPath.row])) { (image, error) in
+            if error == nil {
+                cell.imgWeatherCondition.image = image
+            } else {
+                self.errorPopUp()
+            }
+        }
         
         return cell
     }

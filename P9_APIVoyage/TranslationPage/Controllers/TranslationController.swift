@@ -8,11 +8,20 @@
 
 import UIKit
 import Alamofire
+import Spring
 
 class TranslationController: UIViewController {
-    
+    ///
     @IBOutlet weak var initialText: UITextView!
+    ///
     @IBOutlet weak var translatedText: UITextView!
+    ///
+    @IBOutlet weak var initialLanguage: DesignableTextView!
+    ///
+    @IBOutlet weak var targetLanguage: DesignableTextView!
+    ///
+    @IBOutlet weak var translationButton: DesignableButton!
+    //
     let placeholder = "Saisissez du texte.."
     
     override func viewDidLoad() {
@@ -22,32 +31,53 @@ class TranslationController: UIViewController {
         initialText.text = placeholder
         initialText.textColor = .lightGray
         
+        initialLanguage.text = "FR"
+        targetLanguage.text = "EN"
     }
-    
+    ///
     @IBAction func doTranslation() {
-        if let initialText = initialText.text {
-            let parameters: Parameters = ["q": "\(initialText)","target": "en"]
-            
-            APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult, error) in
-                if error == nil {
-                    self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
-                } else {
-                    self.showErrorPopUp()
+        if (initialText.text != placeholder) && !initialText.text.isEmpty {
+            if let initialText = initialText.text {
+                let parameters: Parameters = ["q": "\(initialText)","target": targetLanguage.text.lowercased()]
+                
+                APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult, error) in
+                    if error == nil {
+                        self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
+                    } else {
+                        self.errorPopUp()
+                    }
                 }
             }
+        } else {
+            self.textEmptyPopUp()
         }
     }
-    
-    func showErrorPopUp() {
-        let alertVC = UIAlertController(title: "Erreur", message: "Erreur lors de la traduction", preferredStyle: .alert)
+    ///
+    @IBAction func reverseLanguage(_ sender: Any) {
+        let memInitialLanguage = initialLanguage.text
+        
+        initialLanguage.text = targetLanguage.text
+        targetLanguage.text = memInitialLanguage
+    }
+    ///
+    func errorPopUp() {
+        let alertVC = UIAlertController(title: "", message: "Erreur lors de la traduction", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
         alertVC.addAction(UIAlertAction(title: "Réessayer", style: .default) { (action:UIAlertAction!) in
             self.doTranslation()
         })
+        
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    //
+    func textEmptyPopUp() {
+        let alertVC = UIAlertController(title: "", message: "Veuillez saisir un texte", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
         self.present(alertVC, animated: true, completion: nil)
     }
 }
-
+///
 extension TranslationController: UITextViewDelegate {
     ///
     func textViewDidBeginEditing(_ textView: UITextView)

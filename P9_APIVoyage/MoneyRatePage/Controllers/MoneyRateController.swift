@@ -9,13 +9,14 @@
 import UIKit
 import SwiftyJSON
 
+///
 class MoneyRateController: UIViewController {
     ///
     var currentRate: Double = 0.0
     ///
     @IBOutlet weak var localChangeText: UITextView!
     ///
-    @IBOutlet weak var dollarChangeText: UITextView!
+    @IBOutlet weak var dollarChangeText: UILabel!
     ///
     let placeholder = "Saisissez un montant.."
     
@@ -32,43 +33,48 @@ class MoneyRateController: UIViewController {
             self.updateRate()
         }
     }
-    
+    ///
     func setupTimer() {
         let dayInSeconde = 24.0 * 60.0
         
         Timer.scheduledTimer(timeInterval: dayInSeconde, target: self, selector: #selector(self.updateRate), userInfo: nil, repeats: true)
     }
-    
+    ///
     @objc func updateRate()
     {
         APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult, error) in
             if error == nil {
+                print(jsonResult)
                 self.currentRate = jsonResult["rates"]["USD"].doubleValue
             } else {
-                self.showErrorPopUp()
+                self.errorPopUp()
             }
         }
     }
-    
+    ///
     @IBAction func convertLocalMoneyToDollar() {
-        if let changeText = localChangeText.text, let localChangeNumber = Double(changeText) {
-            let dollarChangeNumber = localChangeNumber * self.currentRate
-            
-            dollarChangeText.text = String(dollarChangeNumber)
+        if self.currentRate != 0.0 {
+            if let changeText = localChangeText.text, let localChangeNumber = Double(changeText) {
+                let dollarChangeNumber = localChangeNumber * self.currentRate
+                dollarChangeText.text = String(dollarChangeNumber)
+            }
+        } else {
+            self.updateRate()
         }
     }
     
     ///
-    func showErrorPopUp() {
-        let alertVC = UIAlertController(title: "Erreur", message: "Une erreur lors de la récupération du taux", preferredStyle: .alert)
+    func errorPopUp() {
+        let alertVC = UIAlertController(title: "", message: "Erreur lors de la récupération du taux", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
         alertVC.addAction(UIAlertAction(title: "Réessayer", style: .default) { (action:UIAlertAction!) in
             self.updateRate()
         })
+        
         self.present(alertVC, animated: true, completion: nil)
     }
 }
-
+///
 extension MoneyRateController: UITextViewDelegate {
     ///
     func textViewDidBeginEditing(_ textView: UITextView)
