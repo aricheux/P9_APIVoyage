@@ -11,7 +11,7 @@ import Alamofire
 import Spring
 
 class TranslationController: UIViewController {
-    var autoDetecting = Bool()
+    var autoLanguageDetection = false
     ///
     @IBOutlet weak var initialText: UITextView!
     ///
@@ -27,8 +27,6 @@ class TranslationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        autoDetecting = false
         
         initialText.delegate = self
         initialText.text = placeholder
@@ -82,6 +80,28 @@ class TranslationController: UIViewController {
     }
     
     ///
+    @IBAction func dismissKeybord(_ sender: UITapGestureRecognizer) {
+        initialText.resignFirstResponder()
+    }
+    
+    ///
+    @IBAction func autoLanguageDetection(_ sender: UISwitch) {
+        autoLanguageDetection = sender.isOn
+        
+        if autoLanguageDetection {
+            detectLanguage()
+        } else {
+            sourceLanguage.text = "FR"
+            targetLanguage.text = "EN"
+        }
+    }
+    
+    ///
+    @IBAction func copyInClipboard(_ sender: Any) {
+        UIPasteboard.general.string = translatedText.text
+    }
+    
+    ///
     func errorPopUp() {
         let alertVC = UIAlertController(title: "", message: "Erreur lors de la traduction", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
@@ -100,29 +120,12 @@ class TranslationController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-    ///
-    @IBAction func dismissKeybord(_ sender: UITapGestureRecognizer) {
-        initialText.resignFirstResponder()
-    }
-    
-    ///
-    @IBAction func autoLanguageDetection(_ sender: UISwitch) {
-        autoDetecting = sender.isOn
-        
-        if autoDetecting {
-            detectLanguage()
-        } else {
-            sourceLanguage.text = "FR"
-            targetLanguage.text = "EN"
-        }
-    }
-    
 }
 ///
 extension TranslationController: UITextViewDelegate {
     //
     func textViewDidChange(_ textView: UITextView) {
-        if autoDetecting {
+        if autoLanguageDetection {
             detectLanguage()
         }
     }

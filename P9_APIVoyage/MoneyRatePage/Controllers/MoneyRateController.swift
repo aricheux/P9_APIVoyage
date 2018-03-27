@@ -55,7 +55,7 @@ class MoneyRateController: UIViewController {
         if self.currentRate != 0.0 {
             if let changeText = localChangeText.text, let localChangeNumber = Double(changeText) {
                 let dollarChangeNumber = localChangeNumber * self.currentRate
-                dollarChangeText.text = String(dollarChangeNumber)
+                dollarChangeText.text = String(dollarChangeNumber) + " $"
             }
         } else {
             self.updateRate()

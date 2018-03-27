@@ -124,13 +124,26 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.33333333329999998" green="0.59999999999999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-z2-tLg">
+                                <rect key="frame" x="258.5" y="301.5" width="45.5" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R3o-z2-tLg" secondAttribute="height" multiplier="1:1" id="xUU-dX-yJO"/>
+                                </constraints>
+                                <state key="normal" image="copy"/>
+                                <connections>
+                                    <action selector="copyInClipboard:" destination="nRG-xP-pY0" eventType="touchUpInside" id="QgL-Aa-J09"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -155,10 +168,13 @@
                             <constraint firstItem="sld-mG-kNY" firstAttribute="height" secondItem="FIQ-xN-QHL" secondAttribute="height" multiplier="0.2" id="a0L-ib-fBa"/>
                             <constraint firstItem="sld-mG-kNY" firstAttribute="width" secondItem="FIQ-xN-QHL" secondAttribute="width" multiplier="0.9" id="cFM-ya-b6N"/>
                             <constraint firstItem="kor-a8-FVo" firstAttribute="centerY" secondItem="pXa-iW-mFX" secondAttribute="centerY" id="cJR-jy-2Wo"/>
+                            <constraint firstItem="R3o-z2-tLg" firstAttribute="trailing" secondItem="iR9-tp-uMn" secondAttribute="trailing" id="eel-uR-RJR"/>
                             <constraint firstItem="qTL-Yi-wIe" firstAttribute="centerY" secondItem="pXa-iW-mFX" secondAttribute="centerY" id="f3y-qA-Pc4"/>
                             <constraint firstItem="Tou-iE-MYH" firstAttribute="leading" secondItem="sld-mG-kNY" secondAttribute="leading" id="hZv-2E-22T"/>
                             <constraint firstItem="iR9-tp-uMn" firstAttribute="height" secondItem="sld-mG-kNY" secondAttribute="height" id="i9d-9T-gLZ"/>
+                            <constraint firstItem="R3o-z2-tLg" firstAttribute="top" secondItem="iR9-tp-uMn" secondAttribute="top" id="iKt-65-MsN"/>
                             <constraint firstItem="kor-a8-FVo" firstAttribute="trailing" secondItem="sld-mG-kNY" secondAttribute="trailing" id="iod-HZ-r4V"/>
+                            <constraint firstItem="R3o-z2-tLg" firstAttribute="height" secondItem="iR9-tp-uMn" secondAttribute="height" multiplier="0.4" id="sWZ-qn-rNF"/>
                             <constraint firstItem="qTL-Yi-wIe" firstAttribute="leading" secondItem="pXa-iW-mFX" secondAttribute="trailing" id="xDK-tx-0VO"/>
                             <constraint firstItem="XOw-Jr-u0b" firstAttribute="height" secondItem="sld-mG-kNY" secondAttribute="height" multiplier="0.4" id="ylp-8H-Ub7"/>
                         </constraints>
@@ -206,6 +222,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="copy" width="25" height="25"/>
         <image name="reverse" width="25" height="25"/>
         <image name="translateActif" width="25" height="25"/>
         <image name="translateInactif" width="25" height="25"/>

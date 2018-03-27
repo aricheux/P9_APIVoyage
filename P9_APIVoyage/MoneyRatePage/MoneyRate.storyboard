@@ -43,7 +43,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-Xi-Nm5" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="21.333333333333343" y="94" width="372.66666666666663" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -67,14 +67,23 @@
                                 <color key="textColor" red="0.33333333329999998" green="0.59999999999999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRN-b5-TxU">
+                                <rect key="frame" x="319.33333333333331" y="94" width="74.666666666666686" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.33333333333333331" green="0.59999999999999998" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.06" id="0hZ-wq-oMa"/>
+                            <constraint firstItem="eEk-Xi-Nm5" firstAttribute="trailing" secondItem="WRN-b5-TxU" secondAttribute="trailing" id="73a-EV-s5R"/>
                             <constraint firstItem="Zq6-9I-IwQ" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="8" id="B7A-1u-FVQ"/>
+                            <constraint firstItem="WRN-b5-TxU" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="Jek-xD-9Ei"/>
                             <constraint firstItem="Zq6-9I-IwQ" firstAttribute="leading" secondItem="Fcf-zs-edo" secondAttribute="leading" constant="21" id="JyF-In-gIW"/>
+                            <constraint firstItem="WRN-b5-TxU" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="top" id="PUc-EJ-HlU"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="QIu-5u-Q88"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="8" id="Tds-Kl-JlA"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.9" id="Z0J-PW-hmd"/>
@@ -82,6 +91,7 @@
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="Zq6-9I-IwQ" secondAttribute="height" id="meA-ai-mVX"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nJ0-RQ-2bj"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="Zq6-9I-IwQ" secondAttribute="width" id="u38-eQ-dK9"/>
+                            <constraint firstItem="WRN-b5-TxU" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.2" id="uQH-VV-jpz"/>
                             <constraint firstItem="Fcf-zs-edo" firstAttribute="trailing" secondItem="Zq6-9I-IwQ" secondAttribute="trailing" constant="20" id="v7d-bZ-8EZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fcf-zs-edo"/>
