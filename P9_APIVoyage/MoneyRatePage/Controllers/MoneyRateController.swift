@@ -9,11 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-///
+/// Class to handle the money rate page
 class MoneyRateController: UIViewController {
-    ///
-    var currentRate: Double = 0.0
-    ///
+    /// Current rate for the convertion
+    var currentRate = Double()
+    /// 
     @IBOutlet weak var localChangeText: UITextView!
     ///
     @IBOutlet weak var dollarChangeText: UILabel!
@@ -44,7 +44,6 @@ class MoneyRateController: UIViewController {
     {
         APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult, error) in
             if error == nil {
-                print(jsonResult)
                 self.currentRate = jsonResult["rates"]["USD"].doubleValue
             } else {
                 self.errorPopUp()
@@ -73,6 +72,12 @@ class MoneyRateController: UIViewController {
         
         self.present(alertVC, animated: true, completion: nil)
     }
+    
+    @IBAction func dismissKeybord(_ sender: UITapGestureRecognizer) {
+        localChangeText.resignFirstResponder()
+    }
+    
+    
 }
 ///
 extension MoneyRateController: UITextViewDelegate {

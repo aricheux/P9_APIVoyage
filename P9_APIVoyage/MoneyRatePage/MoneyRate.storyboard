@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LO-3z-WGR" customClass="DesignableButton" customModule="Spring">
-                                <rect key="frame" x="21.333333333333343" y="219.33333333333334" width="372.66666666666663" height="43.666666666666657"/>
+                                <rect key="frame" x="21.333333333333343" y="146" width="372.66666666666663" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" red="0.33333333333333331" green="0.59999999999999998" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,40 +40,6 @@
                                     <action selector="convertLocalMoneyToDollar" destination="Knb-Cs-Wbe" eventType="touchUpInside" id="k6v-D8-xhz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="EUR" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPR-tG-Eyi" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="21.333333333333336" y="154.66666666666666" width="111.66666666666666" height="44.666666666666657"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="USD" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-HP-uyt" customClass="DesignableTextView" customModule="Spring">
-                                <rect key="frame" x="282.33333333333331" y="154.66666666666666" width="111.66666666666669" height="44.666666666666657"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eEk-Xi-Nm5" customClass="DesignableTextView" customModule="Spring">
                                 <rect key="frame" x="21.333333333333343" y="94" width="372.66666666666663" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,14 +57,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="convert" translatesAutoresizingMaskIntoConstraints="NO" id="rgv-dX-TZA">
-                                <rect key="frame" x="185.33333333333334" y="154.66666666666666" width="44" height="44.666666666666657"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rgv-dX-TZA" secondAttribute="height" id="HuB-e6-cHQ"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq6-9I-IwQ">
-                                <rect key="frame" x="21" y="271" width="373" height="50"/>
+                                <rect key="frame" x="21" y="204" width="373" height="50"/>
                                 <color key="tintColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Xwc-BD-VJa"/>
@@ -111,39 +70,37 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.33333333333333331" green="0.59999999999999998" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="height" secondItem="Az0-TU-eAa" secondAttribute="height" multiplier="0.06" id="0hZ-wq-oMa"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="YPR-tG-Eyi" secondAttribute="bottom" constant="20" id="AN2-rm-3mb"/>
                             <constraint firstItem="Zq6-9I-IwQ" firstAttribute="top" secondItem="8LO-3z-WGR" secondAttribute="bottom" constant="8" id="B7A-1u-FVQ"/>
-                            <constraint firstItem="i4y-HP-uyt" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="EId-7C-ooI"/>
-                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="Ik0-Bw-2yb"/>
                             <constraint firstItem="Zq6-9I-IwQ" firstAttribute="leading" secondItem="Fcf-zs-edo" secondAttribute="leading" constant="21" id="JyF-In-gIW"/>
-                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="NgA-cP-FnW"/>
-                            <constraint firstItem="rgv-dX-TZA" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="Oxc-Mc-GxY"/>
                             <constraint firstItem="8LO-3z-WGR" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="QIu-5u-Q88"/>
-                            <constraint firstItem="i4y-HP-uyt" firstAttribute="trailing" secondItem="eEk-Xi-Nm5" secondAttribute="trailing" id="UhV-gc-Mii"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="8" id="Tds-Kl-JlA"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="width" secondItem="Az0-TU-eAa" secondAttribute="width" multiplier="0.9" id="Z0J-PW-hmd"/>
-                            <constraint firstItem="i4y-HP-uyt" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" multiplier="0.3" id="bES-2S-iTv"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="top" secondItem="Fcf-zs-edo" secondAttribute="top" constant="30" id="cFK-5F-szZ"/>
-                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="eyo-w6-G1M"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="eEk-Xi-Nm5" secondAttribute="height" id="meA-ai-mVX"/>
-                            <constraint firstItem="rgv-dX-TZA" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nGi-1V-D8J"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="height" secondItem="Zq6-9I-IwQ" secondAttribute="height" id="meA-ai-mVX"/>
                             <constraint firstItem="eEk-Xi-Nm5" firstAttribute="centerX" secondItem="Az0-TU-eAa" secondAttribute="centerX" id="nJ0-RQ-2bj"/>
-                            <constraint firstItem="rgv-dX-TZA" firstAttribute="height" secondItem="i4y-HP-uyt" secondAttribute="height" id="oWK-Ii-HnF"/>
-                            <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="eEk-Xi-Nm5" secondAttribute="width" id="u38-eQ-dK9"/>
+                            <constraint firstItem="8LO-3z-WGR" firstAttribute="width" secondItem="Zq6-9I-IwQ" secondAttribute="width" id="u38-eQ-dK9"/>
                             <constraint firstItem="Fcf-zs-edo" firstAttribute="trailing" secondItem="Zq6-9I-IwQ" secondAttribute="trailing" constant="20" id="v7d-bZ-8EZ"/>
-                            <constraint firstItem="YPR-tG-Eyi" firstAttribute="leading" secondItem="eEk-Xi-Nm5" secondAttribute="leading" id="xbi-aB-Zjj"/>
-                            <constraint firstItem="i4y-HP-uyt" firstAttribute="top" secondItem="eEk-Xi-Nm5" secondAttribute="bottom" constant="16.666666666666657" id="xum-I7-E4d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fcf-zs-edo"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Md6-Xg-C3r" appends="YES" id="nq0-n4-loD"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Ol3-EQ-SJL"/>
                     <connections>
                         <outlet property="dollarChangeText" destination="Zq6-9I-IwQ" id="Vw7-dM-76x"/>
-                        <outlet property="localChangeText" destination="eEk-Xi-Nm5" id="avq-8u-MB9"/>
+                        <outlet property="localChangeText" destination="eEk-Xi-Nm5" id="DgQ-hR-g7l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLM-Bw-Z1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Md6-Xg-C3r">
+                    <connections>
+                        <action selector="dismissKeybord:" destination="Knb-Cs-Wbe" id="XhC-GL-Ua1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1615.9420289855075" y="-974.18478260869574"/>
         </scene>
@@ -168,7 +125,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="convert" width="30" height="30"/>
         <image name="dollarActif" width="25" height="25"/>
         <image name="dollarInactif" width="25" height="25"/>
     </resources>

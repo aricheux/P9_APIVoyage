@@ -11,14 +11,15 @@ import Alamofire
 import Spring
 
 class TranslationController: UIViewController {
+    var autoDetecting = Bool()
     ///
     @IBOutlet weak var initialText: UITextView!
     ///
     @IBOutlet weak var translatedText: UITextView!
     ///
-    @IBOutlet weak var initialLanguage: DesignableTextView!
+    @IBOutlet weak var sourceLanguage: UILabel!
     ///
-    @IBOutlet weak var targetLanguage: DesignableTextView!
+    @IBOutlet weak var targetLanguage: UILabel!
     ///
     @IBOutlet weak var translationButton: DesignableButton!
     //
@@ -27,24 +28,29 @@ class TranslationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        autoDetecting = false
+        
         initialText.delegate = self
         initialText.text = placeholder
         initialText.textColor = .lightGray
         
-        initialLanguage.text = "FR"
+        sourceLanguage.text = "FR"
         targetLanguage.text = "EN"
     }
+    
     ///
     @IBAction func doTranslation() {
         if (initialText.text != placeholder) && !initialText.text.isEmpty {
-            if let initialText = initialText.text {
-                let parameters: Parameters = ["q": "\(initialText)","target": targetLanguage.text.lowercased()]
+            if let initialText = initialText.text, let targetLanguage = targetLanguage.text, let sourceLanguage = sourceLanguage.text {
+                var parameters: Parameters = ["q": "\(initialText)"]
+                parameters["target"] = targetLanguage.lowercased()
+                parameters["source"] = sourceLanguage.lowercased()
                 
                 APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult, error) in
                     if error == nil {
                         self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
                     } else {
-                        self.errorPopUp()
+                        self.errorPopUp()   
                     }
                 }
             }
@@ -52,13 +58,29 @@ class TranslationController: UIViewController {
             self.textEmptyPopUp()
         }
     }
+    
+    ///
+    func detectLanguage() {
+        if let initialText = initialText.text {
+            let parameters: Parameters = ["q": "\(initialText)"]
+            APIManager.sharedInstance.detectLanguage(with: parameters) { (jsonResult, error) in
+                if error == nil {
+                    self.sourceLanguage.text = jsonResult["data"]["detections"][0][0]["language"].stringValue.uppercased()
+                } else {
+                    self.errorPopUp()
+                }
+            }
+        }
+    }
+    
     ///
     @IBAction func reverseLanguage(_ sender: Any) {
-        let memInitialLanguage = initialLanguage.text
+        let memInitialLanguage = sourceLanguage.text
         
-        initialLanguage.text = targetLanguage.text
+        sourceLanguage.text = targetLanguage.text
         targetLanguage.text = memInitialLanguage
     }
+    
     ///
     func errorPopUp() {
         let alertVC = UIAlertController(title: "", message: "Erreur lors de la traduction", preferredStyle: .alert)
@@ -69,6 +91,7 @@ class TranslationController: UIViewController {
         
         self.present(alertVC, animated: true, completion: nil)
     }
+    
     //
     func textEmptyPopUp() {
         let alertVC = UIAlertController(title: "", message: "Veuillez saisir un texte", preferredStyle: .alert)
@@ -76,24 +99,44 @@ class TranslationController: UIViewController {
         
         self.present(alertVC, animated: true, completion: nil)
     }
+    
+    ///
+    @IBAction func dismissKeybord(_ sender: UITapGestureRecognizer) {
+        initialText.resignFirstResponder()
+    }
+    
+    ///
+    @IBAction func autoLanguageDetection(_ sender: UISwitch) {
+        autoDetecting = sender.isOn
+        
+        if autoDetecting {
+            detectLanguage()
+        } else {
+            sourceLanguage.text = "FR"
+            targetLanguage.text = "EN"
+        }
+    }
+    
 }
 ///
 extension TranslationController: UITextViewDelegate {
+    //
+    func textViewDidChange(_ textView: UITextView) {
+        if autoDetecting {
+            detectLanguage()
+        }
+    }
     ///
-    func textViewDidBeginEditing(_ textView: UITextView)
-    {
-        if (textView.text == placeholder)
-        {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if (textView.text == placeholder) {
             textView.text = ""
             textView.textColor = .black
         }
         textView.becomeFirstResponder()
     }
     ///
-    func textViewDidEndEditing(_ textView: UITextView)
-    {
-        if (textView.text == "")
-        {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if (textView.text == "") {
             textView.text = placeholder
             textView.textColor = .lightGray
         }

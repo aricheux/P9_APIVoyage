@@ -13,18 +13,19 @@
 		71121D1C200E900A0083873F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D1B200E900A0083873F /* TabBarController.swift */; };
 		71121D1E200E900A0083873F /* MoneyRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D1D200E900A0083873F /* MoneyRateController.swift */; };
 		71121D21200E900A0083873F /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D1F200E900A0083873F /* TabBar.storyboard */; };
-		71121D23200E900A0083873F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71121D22200E900A0083873F /* Assets.xcassets */; };
 		71121D26200E900A0083873F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71121D24200E900A0083873F /* LaunchScreen.storyboard */; };
 		71121D31200E900A0083873F /* P9_APIVoyageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D30200E900A0083873F /* P9_APIVoyageTests.swift */; };
 		71121D3C200E900A0083873F /* P9_APIVoyageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D3B200E900A0083873F /* P9_APIVoyageUITests.swift */; };
 		71121D51200E932A0083873F /* TranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D50200E932A0083873F /* TranslationController.swift */; };
 		71121D57200E93E70083873F /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71121D56200E93E70083873F /* WeatherController.swift */; };
 		71121D59200E95F10083873F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71121D58200E95F10083873F /* Default-568h@2x.png */; };
+		711743582065794200A1C161 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711743572065794200A1C161 /* StringExtension.swift */; };
 		711C3F7320133D0E0046CBB0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711C3F7220133D0E0046CBB0 /* APIManager.swift */; };
 		711C3F78201348790046CBB0 /* Weather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F77201348790046CBB0 /* Weather.storyboard */; };
 		711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F79201348870046CBB0 /* Translate.storyboard */; };
 		711C3F7D201348970046CBB0 /* MoneyRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711C3F7C201348970046CBB0 /* MoneyRate.storyboard */; };
 		7155C9EB201F8BAC00AA6F49 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7155C9EA201F8BAC00AA6F49 /* Weather.swift */; };
+		7184337420656B16000BB0D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7184337320656B16000BB0D0 /* Assets.xcassets */; };
 		719F36CD201CAEF100803B4B /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F36CC201CAEF100803B4B /* WeatherTableViewCell.swift */; };
 		FC2DDE615C75BD97253E129E /* Pods_P9_APIVoyageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC014CF9D93A15538B16A1F5 /* Pods_P9_APIVoyageUITests.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +54,6 @@
 		71121D1B200E900A0083873F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		71121D1D200E900A0083873F /* MoneyRateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyRateController.swift; sourceTree = "<group>"; };
 		71121D20200E900A0083873F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
-		71121D22200E900A0083873F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71121D25200E900A0083873F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71121D27200E900A0083873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71121D2C200E900A0083873F /* P9_APIVoyageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P9_APIVoyageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,11 +65,13 @@
 		71121D50200E932A0083873F /* TranslationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationController.swift; sourceTree = "<group>"; };
 		71121D56200E93E70083873F /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		71121D58200E95F10083873F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		711743572065794200A1C161 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		711C3F7220133D0E0046CBB0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		711C3F77201348790046CBB0 /* Weather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weather.storyboard; sourceTree = "<group>"; };
 		711C3F7A201348870046CBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = P9_APIVoyage/TabBarController/Base.lproj/Translate.storyboard; sourceTree = "<group>"; };
 		711C3F7C201348970046CBB0 /* MoneyRate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoneyRate.storyboard; sourceTree = "<group>"; };
 		7155C9EA201F8BAC00AA6F49 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		7184337320656B16000BB0D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		719F36CC201CAEF100803B4B /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		79EC419F6FE6F984841E6D65 /* Pods_P9_APIVoyageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_P9_APIVoyageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD235553370E94785DF350D /* Pods-P9_APIVoyageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P9_APIVoyageTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-P9_APIVoyageTests/Pods-P9_APIVoyageTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				71121D4B200E92310083873F /* TranslationPage */,
 				71121D4C200E92690083873F /* WeatherPage */,
 				71121D4D200E92BD0083873F /* Ressource */,
+				711743562065793300A1C161 /* Extension */,
 			);
 			path = P9_APIVoyage;
 			sourceTree = "<group>";
@@ -226,18 +229,26 @@
 		71121D4D200E92BD0083873F /* Ressource */ = {
 			isa = PBXGroup;
 			children = (
+				7184337320656B16000BB0D0 /* Assets.xcassets */,
 				71121D24200E900A0083873F /* LaunchScreen.storyboard */,
 				71121D27200E900A0083873F /* Info.plist */,
-				71121D22200E900A0083873F /* Assets.xcassets */,
 			);
 			path = Ressource;
+			sourceTree = "<group>";
+		};
+		711743562065793300A1C161 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				711743572065794200A1C161 /* StringExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		71AA6A802025BB2E00E8F78F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7155C9EA201F8BAC00AA6F49 /* Weather.swift */,
 				711C3F7220133D0E0046CBB0 /* APIManager.swift */,
+				7155C9EA201F8BAC00AA6F49 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,9 +404,9 @@
 			files = (
 				71121D26200E900A0083873F /* LaunchScreen.storyboard in Resources */,
 				711C3F78201348790046CBB0 /* Weather.storyboard in Resources */,
-				71121D23200E900A0083873F /* Assets.xcassets in Resources */,
 				711C3F7B201348870046CBB0 /* Translate.storyboard in Resources */,
 				71121D59200E95F10083873F /* Default-568h@2x.png in Resources */,
+				7184337420656B16000BB0D0 /* Assets.xcassets in Resources */,
 				711C3F7D201348970046CBB0 /* MoneyRate.storyboard in Resources */,
 				71121D21200E900A0083873F /* TabBar.storyboard in Resources */,
 			);
@@ -583,6 +594,7 @@
 				71121D1E200E900A0083873F /* MoneyRateController.swift in Sources */,
 				719F36CD201CAEF100803B4B /* WeatherTableViewCell.swift in Sources */,
 				71121D51200E932A0083873F /* TranslationController.swift in Sources */,
+				711743582065794200A1C161 /* StringExtension.swift in Sources */,
 				71121D57200E93E70083873F /* WeatherController.swift in Sources */,
 				71121D1A200E900A0083873F /* AppDelegate.swift in Sources */,
 				71121D1C200E900A0083873F /* TabBarController.swift in Sources */,

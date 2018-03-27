@@ -31,6 +31,39 @@ class P9_APIVoyageUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        let element2 = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
+        let element = element2.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        let textView = element.children(matching: .textView).element
+        textView.tap()
+        textView.typeText("1")
+        app.buttons["Convert"].tap()
+        
+        let alertsQuery = app.alerts
+        let rEssayerButton = alertsQuery.buttons["Réessayer"]
+        rEssayerButton.tap()
+        
+        let annulerButton = alertsQuery.buttons["Annuler"]
+        annulerButton.tap()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Translate"].tap()
+        
+        let textView2 = element.children(matching: .textView).element(boundBy: 0)
+        textView2.tap()
+        textView2.typeText("Bonjour")
+        element2.buttons["Translate"].tap()
+        rEssayerButton.tap()
+        annulerButton.tap()
+        tabBarsQuery.buttons["Weather"].tap()
+        rEssayerButton.tap()
+        annulerButton.tap()
+        
     }
+    
+    func onlineMode() {
+    }
+    
     
 }
