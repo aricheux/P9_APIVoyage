@@ -32,38 +32,51 @@ class P9_APIVoyageUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
+        
         let app = XCUIApplication()
         let element2 = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
         let element = element2.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         let textView = element.children(matching: .textView).element
+        // Tab bar money rate
         textView.tap()
-        textView.typeText("1")
+        textView.typeText("10.25")
         app.buttons["Convert"].tap()
-        
-        let alertsQuery = app.alerts
-        let rEssayerButton = alertsQuery.buttons["Réessayer"]
-        rEssayerButton.tap()
-        
-        let annulerButton = alertsQuery.buttons["Annuler"]
-        annulerButton.tap()
-        
+        let deleteKey = app.keys["Supprimer"]
+        deleteKey.press(forDuration: 1.5)
+        element.tap()
+        // Tab bar translation
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Translate"].tap()
-        
         let textView2 = element.children(matching: .textView).element(boundBy: 0)
         textView2.tap()
         textView2.typeText("Bonjour")
-        element2.buttons["Translate"].tap()
-        rEssayerButton.tap()
-        annulerButton.tap()
+        let translateButton = element2.buttons["Translate"]
+        translateButton.tap()
+        deleteKey.press(forDuration: 1.5)
+        element.children(matching: .textView).element(boundBy: 1).tap()
+        translateButton.tap()
+        app.alerts.buttons["Ok"].tap()
+        textView2.tap()
+        textView2.typeText("Hello")
+        app.buttons["reverse"].tap()
+        translateButton.tap()
+        deleteKey.press(forDuration: 1.5)
+        textView2.typeText("Buenos dias")
+        translateButton.tap()
+        let switch2 = app.switches["0"]
+        switch2.tap()
+        translateButton.tap()
+        deleteKey.press(forDuration: 1.5)
+        app.buttons["copy"].tap()
+        element.tap()
+        let switch3 = app.switches["1"]
+        switch3.tap()
+        sleep(2)
+        // Tab bar weather
         tabBarsQuery.buttons["Weather"].tap()
-        rEssayerButton.tap()
-        annulerButton.tap()
+        sleep(5)
+        
         
     }
-    
-    func onlineMode() {
-    }
-    
     
 }

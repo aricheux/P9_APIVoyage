@@ -19,6 +19,8 @@ class TranslationController: UIViewController {
     ///
     @IBOutlet weak var sourceLanguage: UILabel!
     ///
+    @IBOutlet weak var copyButton: DesignableButton!
+    ///
     @IBOutlet weak var targetLanguage: UILabel!
     ///
     @IBOutlet weak var translationButton: DesignableButton!
@@ -47,6 +49,7 @@ class TranslationController: UIViewController {
                 APIManager.sharedInstance.doTranslation(with: parameters) { (jsonResult, error) in
                     if error == nil {
                         self.translatedText.text = jsonResult["data"]["translations"][0]["translatedText"].stringValue
+                        self.copyButton.isHidden = false
                     } else {
                         self.errorPopUp()   
                     }
@@ -54,20 +57,6 @@ class TranslationController: UIViewController {
             }
         } else {
             self.textEmptyPopUp()
-        }
-    }
-    
-    ///
-    func detectLanguage() {
-        if let initialText = initialText.text {
-            let parameters: Parameters = ["q": "\(initialText)"]
-            APIManager.sharedInstance.detectLanguage(with: parameters) { (jsonResult, error) in
-                if error == nil {
-                    self.sourceLanguage.text = jsonResult["data"]["detections"][0][0]["language"].stringValue.uppercased()
-                } else {
-                    self.errorPopUp()
-                }
-            }
         }
     }
     
@@ -99,6 +88,20 @@ class TranslationController: UIViewController {
     ///
     @IBAction func copyInClipboard(_ sender: Any) {
         UIPasteboard.general.string = translatedText.text
+    }
+    
+    ///
+    func detectLanguage() {
+        if let initialText = initialText.text {
+            let parameters: Parameters = ["q": "\(initialText)"]
+            APIManager.sharedInstance.detectLanguage(with: parameters) { (jsonResult, error) in
+                if error == nil {
+                    self.sourceLanguage.text = jsonResult["data"]["detections"][0][0]["language"].stringValue.uppercased()
+                } else {
+                    self.errorPopUp()
+                }
+            }
+        }
     }
     
     ///

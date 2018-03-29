@@ -124,7 +124,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
@@ -134,12 +134,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-z2-tLg">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-z2-tLg" customClass="DesignableButton" customModule="Spring">
                                 <rect key="frame" x="258.5" y="301.5" width="45.5" height="45.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R3o-z2-tLg" secondAttribute="height" multiplier="1:1" id="xUU-dX-yJO"/>
                                 </constraints>
                                 <state key="normal" image="copy"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.33333333329999998" green="0.59999999999999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="copyInClipboard:" destination="nRG-xP-pY0" eventType="touchUpInside" id="QgL-Aa-J09"/>
                                 </connections>
@@ -185,6 +193,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="52x-47-d6Y"/>
                     <connections>
+                        <outlet property="copyButton" destination="R3o-z2-tLg" id="fsT-RH-fQ3"/>
                         <outlet property="initialText" destination="sld-mG-kNY" id="OgP-6E-ycx"/>
                         <outlet property="sourceLanguage" destination="Tou-iE-MYH" id="Q0X-JZ-UNa"/>
                         <outlet property="targetLanguage" destination="pXa-iW-mFX" id="GW8-4S-AGi"/>
