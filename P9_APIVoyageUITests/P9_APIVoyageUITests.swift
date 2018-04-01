@@ -53,7 +53,7 @@ class P9_APIVoyageUITests: XCTestCase {
         translateButton.tap()
         let deleteKey = app.keys["delete"]
         deleteKey.press(forDuration: 1.5)
-        element.children(matching: .textView).element(boundBy: 1).tap()
+                element.children(matching: .textView).element(boundBy: 1).tap()
         translateButton.tap()
         app.alerts.buttons["Ok"].tap()
         textView2.tap()
@@ -73,7 +73,8 @@ class P9_APIVoyageUITests: XCTestCase {
         element.tap()
         let switch3 = app.switches["1"]
         switch3.tap()
-        sleep(2)
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textView).element(boundBy: 1).tap()
+                sleep(2)
         // Tab bar weather
         tabBarsQuery.buttons["Weather"].tap()
         sleep(5)

@@ -15,6 +15,8 @@ import SwiftyJSON
 class APIManager {
     /// Share the APIManager to all project, no need to create object in code
     static let sharedInstance = APIManager()
+    /// Google cloud key to send the request to google translation
+    let gcloud_Key = "AIzaSyAKk9DZiflKL_2kME9R1Wd4ifXvSrwGaDg"
     
     /// Get data from URL and handle the result
     ///
@@ -40,8 +42,6 @@ class APIManager {
     ///   - param: contain target language and text for the translation
     ///   - completion: if success, JSON data is return in completion
     func doTranslation(with param: Parameters, completion: @escaping (JSON, Error?) -> ()) {
-        let gcloud_Key = "AIzaSyAKk9DZiflKL_2kME9R1Wd4ifXvSrwGaDg"
-        
         let urlString = "https://translation.googleapis.com/language/translate/v2?key=" + gcloud_Key
         
         Alamofire.request(urlString, method: .post, parameters: param,encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -62,8 +62,6 @@ class APIManager {
     ///   - param: contain current text for the translation
     ///   - completion: if success, JSON data is return in completion
     func detectLanguage(with param: Parameters, completion: @escaping (JSON, Error?) -> ()) {
-        let gcloud_Key = "AIzaSyAKk9DZiflKL_2kME9R1Wd4ifXvSrwGaDg"
-        
         let urlString = "https://translation.googleapis.com/language/translate/v2/detect?key=" + gcloud_Key
         
         Alamofire.request(urlString, method: .post, parameters: param,encoding: JSONEncoding.default, headers: nil).responseJSON { response in
