@@ -6,7 +6,7 @@ target 'P9_APIVoyage' do
   use_frameworks!
 
   # Pods for P9_APIVoyage
-  pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'

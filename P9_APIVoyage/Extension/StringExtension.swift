@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// String extension to add the splice fonction
 extension String {
     /// Slice the string value to get the string between two range
     /// - Parameters:

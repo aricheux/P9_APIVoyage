@@ -13,13 +13,14 @@ import SwiftyJSON
 class MoneyRateController: UIViewController {
     /// Current rate for the convertion
     var currentRate = Double()
-    /// 
+    /// String who contain the value in euro to convert
     @IBOutlet weak var localChangeText: UITextView!
-    ///
+    /// String who contain the converted value in dollar
     @IBOutlet weak var dollarChangeText: UILabel!
-    ///
+    /// String who contain the text to put when the textview is empty
     let placeholder = "Saisissez un montant.."
     
+    // Set parameter and do action when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +34,15 @@ class MoneyRateController: UIViewController {
             self.updateRate()
         }
     }
-    ///
+    
+    /// Setup the timer to update every day the current dollar rate
     func setupTimer() {
         let dayInSeconde = 24.0 * 60.0
         
         Timer.scheduledTimer(timeInterval: dayInSeconde, target: self, selector: #selector(self.updateRate), userInfo: nil, repeats: true)
     }
-    ///
+    
+    /// Get the current dollar rate from the API
     @objc func updateRate()
     {
         APIManager.sharedInstance.getData(from: "https://api.fixer.io/latest") { (jsonResult, error) in
@@ -50,7 +53,8 @@ class MoneyRateController: UIViewController {
             }
         }
     }
-    ///
+    
+    /// Update the rate if it's missing and convert the euro value to dollar
     @IBAction func convertLocalMoneyToDollar() {
         if self.currentRate != 0.0 {
             if let changeText = localChangeText.text, let localChangeNumber = Double(changeText) {
@@ -62,7 +66,7 @@ class MoneyRateController: UIViewController {
         }
     }
     
-    ///
+    /// Show an error pop-up if the API request have a problem
     func errorPopUp() {
         let alertVC = UIAlertController(title: "", message: "Erreur lors de la récupération du taux", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
@@ -73,15 +77,15 @@ class MoneyRateController: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
+    /// Dismiss keyboard if the user tap outside of it
     @IBAction func dismissKeybord(_ sender: UITapGestureRecognizer) {
         localChangeText.resignFirstResponder()
     }
-    
-    
 }
-///
+
+/// Extension of UITextViewDelegate to handle the place holder
 extension MoneyRateController: UITextViewDelegate {
-    ///
+    /// replace the placeholder by an empty string
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         if (textView.text == placeholder)
@@ -91,7 +95,8 @@ extension MoneyRateController: UITextViewDelegate {
         }
         textView.becomeFirstResponder()
     }
-    ///
+    
+    /// Replace the empty text by a placeholder
     func textViewDidEndEditing(_ textView: UITextView)
     {
         if (textView.text == "")

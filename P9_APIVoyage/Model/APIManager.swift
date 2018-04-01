@@ -17,6 +17,7 @@ class APIManager {
     static let sharedInstance = APIManager()
     
     /// Get data from URL and handle the result
+    ///
     /// - Parameters:
     ///   - URLString: contain the website url to request
     ///   - completion: if success, JSON data is return in completion
@@ -33,7 +34,8 @@ class APIManager {
         }
     }
     
-    /// get the translation from google translate
+    /// Get the translation from google translate
+    ///
     /// - Parameters:
     ///   - param: contain target language and text for the translation
     ///   - completion: if success, JSON data is return in completion
@@ -54,6 +56,11 @@ class APIManager {
         }
     }
     
+    /// Get the source language of the current text
+    ///
+    /// - Parameters:
+    ///   - param: contain current text for the translation
+    ///   - completion: if success, JSON data is return in completion
     func detectLanguage(with param: Parameters, completion: @escaping (JSON, Error?) -> ()) {
         let gcloud_Key = "AIzaSyAKk9DZiflKL_2kME9R1Wd4ifXvSrwGaDg"
         
@@ -72,6 +79,7 @@ class APIManager {
     }
     
     /// Get weather data grom yahoo url
+    ///
     /// - Parameters:
     ///   - query: formatted query with information needed from the controller
     ///   - completion: if success, JSON data is return in completion
@@ -91,6 +99,7 @@ class APIManager {
     }
     
     /// Get sky condition image from yahoo
+    ///
     /// - Parameters:
     ///   - url: contain the url for the image data
     ///   - completion: if success, JSON data is return in completion

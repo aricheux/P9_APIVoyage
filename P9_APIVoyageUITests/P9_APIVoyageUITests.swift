@@ -41,8 +41,7 @@ class P9_APIVoyageUITests: XCTestCase {
         textView.tap()
         textView.typeText("10.25")
         app.buttons["Convert"].tap()
-        let deleteKey = app.keys["Supprimer"]
-        deleteKey.press(forDuration: 1.5)
+        app.keys["Delete"].press(forDuration: 1.0)
         element.tap()
         // Tab bar translation
         let tabBarsQuery = app.tabBars
@@ -52,6 +51,7 @@ class P9_APIVoyageUITests: XCTestCase {
         textView2.typeText("Bonjour")
         let translateButton = element2.buttons["Translate"]
         translateButton.tap()
+        let deleteKey = app.keys["delete"]
         deleteKey.press(forDuration: 1.5)
         element.children(matching: .textView).element(boundBy: 1).tap()
         translateButton.tap()
@@ -60,9 +60,11 @@ class P9_APIVoyageUITests: XCTestCase {
         textView2.typeText("Hello")
         app.buttons["reverse"].tap()
         translateButton.tap()
+        sleep(1)
         deleteKey.press(forDuration: 1.5)
         textView2.typeText("Buenos dias")
         translateButton.tap()
+        sleep(1)
         let switch2 = app.switches["0"]
         switch2.tap()
         translateButton.tap()

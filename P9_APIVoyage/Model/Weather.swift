@@ -23,6 +23,7 @@ class Weather {
     var imageSkyCondition = UIImage()
     
     /// Initialize the weather object with Json value from Yahoo
+    ///
     /// - Parameter json: Json data from yahoo
     init (json: JSON) {
         let forecastDay = json["item"]["forecast"][0]
