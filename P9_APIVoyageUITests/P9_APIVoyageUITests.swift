@@ -53,7 +53,7 @@ class P9_APIVoyageUITests: XCTestCase {
         translateButton.tap()
         let deleteKey = app.keys["delete"]
         deleteKey.press(forDuration: 1.5)
-                element.children(matching: .textView).element(boundBy: 1).tap()
+        element.children(matching: .textView).element(boundBy: 1).tap()
         translateButton.tap()
         app.alerts.buttons["Ok"].tap()
         textView2.tap()

@@ -12,7 +12,6 @@ import Spring
 
 /// Class to handle the translation page
 class TranslationController: UIViewController {
-    var autoLanguageDetection = false
     /// Initial text before translation
     @IBOutlet weak var initialText: UITextView!
     /// Text return from google translation
@@ -23,6 +22,8 @@ class TranslationController: UIViewController {
     @IBOutlet weak var targetLanguage: UILabel!
     /// button to send request to google translation
     @IBOutlet weak var translationButton: DesignableButton!
+    /// Switch to enable the auto detection of the language
+    @IBOutlet weak var detectLanguageSwitch: UISwitch!
     /// String who contain the text to put when the textview is empty
     let placeholder = "Saisissez du texte.."
     
@@ -74,9 +75,7 @@ class TranslationController: UIViewController {
     
     /// Detect the language of the initial text if it's switch on
     @IBAction func autoLanguageDetection(_ sender: UISwitch) {
-        autoLanguageDetection = sender.isOn
-        
-        if autoLanguageDetection {
+        if sender.isOn {
             detectLanguage()
         } else {
             sourceLanguage.text = "FR"
@@ -128,7 +127,7 @@ class TranslationController: UIViewController {
 extension TranslationController: UITextViewDelegate {
     // Send the detect language request when the initial text is changing
     func textViewDidChange(_ textView: UITextView) {
-        if autoLanguageDetection {
+        if detectLanguageSwitch.isOn {
             detectLanguage()
         }
     }
